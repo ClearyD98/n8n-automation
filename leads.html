@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Free Automation Consultation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: system-ui; max-width: 600px; margin: 50px auto; padding: 20px; }
+        input, textarea { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; }
+        button { background: #2563eb; color: white; padding: 14px 24px; border: none; border-radius: 8px; cursor: pointer; width: 100%; font-size: 16px; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 8px; }
+        .success { background: #d1fae5; color: #065f46; }
+    </style>
+</head>
+<body>
+    <h1>🎯 Get Your Free Automation Audit</h1>
+    <p>Tell us what you want to automate and we'll get back to you within 24 hours.</p>
+    
+    <form id="leadForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="company" placeholder="Company (optional)">
+        <textarea name="message" rows="4" placeholder="What do you want to automate?"></textarea>
+        <button type="submit">Get Free Consultation</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        data.timestamp = new Date().toISOString();
+        
+        // Store in localStorage for demo
+        const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+        leads.push(data);
+        localStorage.setItem('leads', JSON.stringify(leads));
+        
+        document.getElementById('result').innerHTML = '<div class="result success">Thanks! We\'ll be in touch within 24 hours.</div>';
+        this.reset();
+    });
+    </script>
+</body>
+</html>
