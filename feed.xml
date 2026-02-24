@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>n8n Automation Services Blog</title>
+<link>https://dylancleary.github.io/business</link>
+<description>Tips and guides on business automation with n8n</description>
+<item>
+<title>5 Tasks You Didn't Know Could Be Automated</title>
+<link>https://dylancleary.github.io/business/blog/automated-tasks.html</link>
+<description>From email responses to data entry - discover what's possible with n8n automation.</description>
+<pubDate>Tue, 24 Feb 2026 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>ROI of Automation: A Real Example</title>
+<link>https://dylancleary.github.io/business/blog/roi-automation.html</link>
+<description>See how one client saved 20 hours per week for just €50 investment.</description>
+<pubDate>Tue, 24 Feb 2026 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>How to Get Started with n8n</title>
+<link>https://dylancleary.github.io/business/blog/n8n-beginners.html</link>
+<description>A beginner's guide to workflow automation with n8n.</description>
+<pubDate>Tue, 24 Feb 2026 12:00:00 +0000</pubDate>
+</item>
+</channel>
+</rss>

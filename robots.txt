@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dylancleary.github.io/business/sitemap.xml
