@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoProd | AI-Powered n8n Workflows That Save 20+ Hours/Week</title>
+    <meta name="description" content="Custom n8n automation workflows built for small businesses. Lead generation, content automation, CRM integrations. Save 20+ hours every week without coding.">
+    <meta name="keywords" content="n8n automation, workflow automation, lead generation, business automation, no-code automation, Zapier alternative, Make.com expert">
+    <meta property="og:title" content="AutoProd | n8n Workflows That Save 20+ Hours/Week">
+    <meta property="og:description" content="Custom automation workflows for small businesses. Built on n8n - powerful, affordable, and runs on your own infrastructure.">
+    <meta property="og:type" content="website">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .cta {
+            background: #e94560;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .cta:hover { transform: scale(1.05); }
+        .badge {
+            background: #4ade80;
+            color: #1a1a2e;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .services {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+        .card:hover { 
+            transform: translateY(-5px);
+            border-color: #e94560;
+        }
+        .card h3 { margin-bottom: 15px; color: #1a1a2e; }
+        .card .price {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .how-it-works {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .step {
+            max-width: 200px;
+        }
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: #e94560;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        .testimonials {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+        }
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        .testimonial {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #e94560;
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial .author {
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+        .testimonial .role {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .why-n8n {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .why-n8n h2 { margin-bottom: 30px; }
+        .n8n-benefits {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .n8n-benefit {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 250px;
+        }
+        .n8n-benefit h4 { color: #4ade80; margin-bottom: 10px; }
+        .faq {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq h2 { text-align: center; margin-bottom: 40px; }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h4 { margin-bottom: 10px; color: #1a1a2e; }
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .contact { font-size: 1.2rem; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <span class="badge">🚀 Powered by n8n - Runs on YOUR infrastructure</span>
+        <h1>🤖 AutoProd</h1>
+        <p>AI-powered workflows that save you 20+ hours every week. No coding required. Built on n8n - you own everything.</p>
+        <a href="#contact" class="cta">Get Your Free Consultation</a>
+    </div>
+
+    <div class="services">
+        <h2>What I Build</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📊 Lead Generation Bots</h3>
+                <p>Automated lead qualification that works while you sleep. Connects to your CRM, enriches data, and routes leads instantly.</p>
+                <div class="price">From €150</div>
+            </div>
+            <div class="card">
+                <h3>🔄 Workflow Automation</h3>
+                <p>n8n, Make, or Zapier workflows that connect all your tools. One setup, runs forever. No per-run costs.</p>
+                <div class="price">From €100</div>
+            </div>
+            <div class="card">
+                <h3>📝 Content Automation</h3>
+                <p>Turn YouTube videos, podcasts, or articles into blog posts, tweets, and newsletters automatically.</p>
+                <div class="price">From €100</div>
+            </div>
+            <div class="card">
+                <h3>🕵️ Data Extraction</h3>
+                <p>Scrape any website, clean the data, and deliver in Google Sheets or your preferred format.</p>
+                <div class="price">From €75</div>
+            </div>
+            <div class="card">
+                <h3>📧 Email Automation</h3>
+                <p>Automated follow-ups, email sequences, and inbox management. Connect to Gmail, Outlook, or any SMTP.</p>
+                <div class="price">From €75</div>
+            </div>
+            <div class="card">
+                <h3>🔌 API Integrations</h3>
+                <p>Connect two apps that don't normally talk to each other. Custom n8n nodes for your specific needs.</p>
+                <div class="price">From €125</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials">
+        <h2>What Business Owners Say</h2>
+        <div class="testimonial">
+            <p>"I was spending 3 hours every day manually copying leads from webforms to my CRM. AutoProd automated the entire process - I haven't touched it since."</p>
+            <div class="author">— Sarah M.</div>
+            <div class="role">E-commerce Business Owner</div>
+        </div>
+        <div class="testimonial">
+            <p>"Finally, someone who actually understands automation. The workflow he built for my newsletter saves me 10+ hours a week. Worth every euro."</p>
+            <div class="author">— James L.</div>
+            <div class="role">Digital Marketing Consultant</div>
+        </div>
+        <div class="testimonial">
+            <p>"Switched from Zapier to n8n through AutoProd. Same results, 80% cheaper. The self-hosted option is game-changing."</p>
+            <div class="author">— Emma K.</div>
+            <div class="role">SaaS Founder</div>
+        </div>
+    </div>
+
+    <div class="why-n8n">
+        <h2>Why n8n Instead of Zapier?</h2>
+        <div class="n8n-benefits">
+            <div class="n8n-benefit">
+                <h4>💰 No Per-Run Costs</h4>
+                <p>Zapier charges for every workflow run. n8n runs on your server - unlimited executions.</p>
+            </div>
+            <div class="n8n-benefit">
+                <h4>🔒 Your Data, Your Server</h4>
+                <p>Self-hosted option means sensitive business data never leaves your infrastructure.</p>
+            </div>
+            <div class="n8n-benefit">
+                <h4>⚡ More Features, Lower Cost</h4>
+                <p>n8n has 400+ integrations, webhooks, and AI nodes. Often more powerful than paid Zapier plans.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Book Call</h3>
+                <p>Tell me what you want to automate</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>I Build</h3>
+                <p>I create your custom automation in 24-48 hours</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>You Save Time</h3>
+                <p>Watch your new system work while you focus on what matters</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>How long does it take?</h4>
+            <p>Most workflows are built within 24-48 hours. Complex multi-step automations may take a week.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do I need technical skills?</h4>
+            <p>Zero. You tell me what you want to achieve, I build. No coding required on your end. it</p>
+        </div>
+        <div class="faq-item">
+            <h4>What if something breaks?</h4>
+            <p>30-day warranty included. If it stops working, I fix it for free. After that, we can discuss a maintenance plan.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can you work with my existing tools?</h4>
+            <p>Almost certainly. n8n connects to 400+ apps. If there's an API, we can connect it.</p>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h2>Ready to Automate?</h2>
+        <p class="contact">Email: hello@autoprod.io</p>
+        <p>Response time: Under 4 hours</p>
+        <p style="margin-top: 30px; opacity: 0.7;">© 2026 AutoProd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
