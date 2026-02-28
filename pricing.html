@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | AutoProd | Enterprise n8n Automation</title>
+    <meta name="description" content="Simple, transparent pricing for custom n8n automation. Starter €199, Business €499, Enterprise €999.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --dark-mid: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: white;
+        }
+        
+        /* Pricing Hero */
+        .pricing-hero {
+            background: var(--dark);
+            padding: 160px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(217, 70, 239, 0.1) 0%, transparent 50%);
+        }
+        
+        .pricing-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .pricing-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Pricing Grid */
+        .pricing-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, #fefeff 0%, white 100%);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 2.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .pricing-tier {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+        
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+        
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        .pricing-delivery {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--dark-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features .check {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 1.25rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-cta.primary {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .pricing-cta.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(99, 102, 241, 0.6);
+        }
+        
+        .pricing-cta.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .pricing-cta.secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* FAQ */
+        .faq-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 0;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+        
+        .faq-item p {
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        footer h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer p {
+            opacity: 0.5;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">⚡ AutoProd</a>
+            <ul class="nav-links">
+                <li><a href="/#products">Products</a></li>
+                <li><a href="/pricing" class="active">Pricing</a></li>
+                <li><a href="/#why">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pricing-hero">
+        <div class="pricing-hero-content">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Choose the automation package that fits your needs. No hidden fees, no surprises.</p>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="pricing-tier">Starter</div>
+                <h3>Single Workflow</h3>
+                <p class="pricing-description">Perfect for automating a single process or workflow in your business.</p>
+                <div class="pricing-price">€199<span>/one-time</span></div>
+                <div class="pricing-delivery">⚡ 48-hour delivery</div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> 1 custom n8n workflow</li>
+                    <li><span class="check">✓</span> Basic integrations (up to 3 apps)</li>
+                    <li><span class="check">✓</span> Setup & configuration</li>
+                    <li><span class="check">✓</span> Basic documentation</li>
+                    <li><span class="check">✓</span> 7 days of support</li>
+                </ul>
+                <a href="https://buy.stripe.com/8x28wQ1sA5w7edJe6w7ss07" class="pricing-cta secondary">Get Started</a>
+            </div>
+            
+            <!-- Business -->
+            <div class="pricing-card featured">
+                <div class="pricing-tier">Business</div>
+                <h3>Multi-Step Automation</h3>
+                <p class="pricing-description">For businesses needing complex automation across multiple tools and processes.</p>
+                <div class="pricing-price">€499<span>/one-time</span></div>
+                <div class="pricing-delivery">⚡ 1-week delivery</div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> 3-5 custom n8n workflows</li>
+                    <li><span class="check">✓</span> Advanced integrations (up to 8 apps)</li>
+                    <li><span class="check">✓</span> Multi-step automation chains</li>
+                    <li><span class="check">✓</span> CRM & database integrations</li>
+                    <li><span class="check">✓</span> 2 rounds of revisions</li>
+                    <li><span class="check">✓</span> 30 days of support</li>
+                </ul>
+                <a href="https://buy.stripe.com/8x2fZi1sA6Abd9F6E47ss08" class="pricing-cta primary">Get Started</a>
+            </div>
+            
+            <!-- Enterprise -->
+            <div class="pricing-card">
+                <div class="pricing-tier">Enterprise</div>
+                <h3>Full Automation Suite</h3>
+                <p class="pricing-description">Comprehensive automation solution for scaling businesses with complex needs.</p>
+                <div class="pricing-price">€999<span>/one-time</span></div>
+                <div class="pricing-delivery">⚡ 2-week delivery</div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Unlimited custom n8n workflows</li>
+                    <li><span class="check">✓</span> Custom integrations (any API)</li>
+                    <li><span class="check">✓</span> Full automation suite design</li>
+                    <li><span class="check">✓</span> Advanced error handling</li>
+                    <li><span class="check">✓</span> Monitoring & alerting setup</li>
+                    <li><span class="check">✓</span> Unlimited revisions</li>
+                    <li><span class="check">✓</span> 90 days of priority support</li>
+                </ul>
+                <a href="https://buy.stripe.com/28E28sgnu3nZ6Lh4vW7ss09" class="pricing-cta secondary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-content">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>What's included in the delivery?</h3>
+                <p>Every package includes a fully functional n8n workflow, setup instructions, and basic documentation. We'll walk you through the entire process.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Can I upgrade later?</h3>
+                <p>Absolutely! You can upgrade from Starter to Business or Enterprise at any time. We'll credit your previous payment towards the upgrade.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Do you offer refunds?</h3>
+                <p>We offer a 7-day money-back guarantee. If you're not satisfied with the delivered workflow, we'll refund your payment in full.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What happens after the support period ends?</h3>
+                <p>You can purchase additional support packages at any time. We're always happy to help with updates or modifications to your workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Questions?</h2>
+        <div class="contact-info">📧 hello@autoprod.io</div>
+        <div class="contact-info">📍 Dublin, Ireland</div>
+        <p>© 2026 AutoProd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
