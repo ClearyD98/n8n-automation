@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>autoprod.io | AI Learning & Development for Irish Enterprises</title>
+    <title>autoprod.io | AI Mastery for the Irish Enterprise</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-bg: #08090a;
-            --color-surface: #191a1b;
-            --color-text-primary: #f7f8f8;
-            --color-text-secondary: #8a8f98;
-            --color-brand: #5e6ad2;
-            --color-accent: #7170ff;
+            --color-bg: #000000;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #a6a6a6;
+            --color-accent: #0099ff;
+            --color-glass: rgba(255, 255, 255, 0.1);
+            --blue-glow: rgba(0, 153, 255, 0.15);
         }
 
         body {
@@ -23,150 +23,231 @@
             color: var(--color-text-primary);
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             -webkit-font-smoothing: antialiased;
-            font-feature-settings: "cv01", "ss03";
+            font-feature-settings: "cv01", "cv05", "cv09", "cv11", "ss03", "ss07";
+            overflow-x: hidden;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        /* Vibe-coded Headings (GT Walsheim-esque) */
+        h1, h2 {
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+            font-weight: 600;
         }
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+        .hero-title {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            margin-bottom: 2rem;
         }
 
-        .gradient-text {
-            background: linear-gradient(to right, #f7f8f8, #8a8f98);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Glassmorphism / Modern Kit components */
+        .glass-btn {
+            background: var(--color-glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .btn-primary {
-            background-color: var(--color-brand);
-            transition: background-color 0.2s;
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: scale(0.98);
         }
 
-        .btn-primary:hover {
-            background-color: var(--color-accent);
+        .primary-pill {
+            background: #ffffff;
+            color: #000000;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
-        .hero-glow {
+        .primary-pill:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .bento-card {
+            background: #090909;
+            border: 1px solid var(--blue-glow);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card::after {
+            content: '';
             position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(94, 106, 210, 0.15) 0%, rgba(8, 9, 10, 0) 70%);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(0, 153, 255, 0.05), transparent);
+            pointer-events: none;
+        }
+
+        /* Vibe coded animation slop */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .accent-glow {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(0, 153, 255, 0.08) 0%, transparent 70%);
             z-index: -1;
-            filter: blur(60px);
+            filter: blur(80px);
+        }
+
+        .nav-link {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .compliance-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
     </style>
 </head>
-<body class="selection:bg-indigo-500/30">
-    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#08090a]/80 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="text-xl font-semibold tracking-tight">autoprod<span class="text-indigo-400">.io</span></div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-[#8a8f98]">
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#roadmap" class="hover:text-white transition-colors">Roadmap</a>
-                <a href="#compliance" class="hover:text-white transition-colors">Compliance</a>
-            </div>
-            <a href="mailto:info@dylancleary.com" class="text-sm font-medium btn-primary px-4 py-2 rounded-lg text-white">Contact Sales</a>
+<body class="selection:bg-blue-500/30">
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-btn rounded-full px-6 py-3 flex items-center space-x-8">
+        <div class="font-bold text-sm tracking-tighter">AUTOPROD<span class="text-blue-500">.IO</span></div>
+        <div class="hidden md:flex space-x-6">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#roadmap" class="nav-link">Roadmap</a>
+            <a href="#compliance" class="nav-link">Audit</a>
         </div>
+        <a href="mailto:info@dylancleary.com" class="text-xs bg-white text-black px-4 py-1.5 rounded-full font-medium">Contact</a>
     </nav>
 
-    <main class="pt-32 pb-20 relative overflow-hidden">
-        <div class="hero-glow"></div>
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-medium text-indigo-400 mb-8">
-                <span>New: AI Strategy for Dublin Enterprises</span>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter mb-8 leading-[1.1] gradient-text">
-                Navigating the AI Tsunami.
-            </h1>
-            <p class="text-lg md:text-xl text-[#8a8f98] mb-12 max-w-2xl mx-auto leading-relaxed">
-                Empowering Irish enterprises with practical AI Learning & Development. 
-                Accelerate adoption, master speed, and ensure strict compliance with EU AI regulations.
-            </p>
-            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#roadmap" class="btn-primary px-8 py-3 rounded-xl font-medium text-white shadow-lg shadow-indigo-500/20 w-full md:w-auto">Get the Roadmap</a>
-                <a href="#compliance" class="px-8 py-3 rounded-xl font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition-all w-full md:w-auto">View Compliance Guide</a>
-            </div>
-        </div>
+    <main class="relative">
+        <div class="accent-glow top-[-10%] right-[-10%]"></div>
+        <div class="accent-glow bottom-[-10%] left-[-10%]"></div>
 
-        <section id="services" class="max-w-6xl mx-auto px-6 mt-40">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">AI Literacy</h3>
-                    <p class="text-sm text-[#8a8f98] leading-relaxed">
-                        Move beyond prompts. We train your teams on AI fundamentals, agentic workflows, and real-world utility.
+        <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-12">
+                <span>Direct Implementation for Dublin 2026</span>
+            </div>
+            <h1 class="hero-title">
+                AI Speed.<br/>Legal Safety.
+            </h1>
+            <p class="text-xl text-[#a6a6a6] mb-12 max-w-2xl mx-auto leading-tight">
+                Practical Learning & Development for Irish Enterprises. 
+                We build the agents, train your staff, and secure your 
+                compliance in one high-velocity roadmap.
+            </p>
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#roadmap" class="primary-pill px-10 py-4 text-sm">Download the 2026 Strategy</a>
+                <a href="#services" class="glass-btn px-10 py-4 text-sm rounded-full">Explore Services</a>
+            </div>
+        </section>
+
+        <section id="services" class="max-w-7xl mx-auto px-6 py-40">
+            <div class="bento-grid">
+                <div class="bento-card md:col-span-2">
+                    <div class="compliance-tag mb-6">GDPR / EU AI ACT</div>
+                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">The Compliance-First Audit</h3>
+                    <p class="text-[#a6a6a6] leading-relaxed max-w-lg">
+                        Navigating the EU AI Act isn't a suggestion—it's survival. 
+                        We audit your existing data flows and architect a safe 
+                        pathway for internal LLM adoption that protects your 
+                        indemnity and your users.
                     </p>
                 </div>
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">EU Compliance</h3>
-                    <p class="text-sm text-[#8a8f98] leading-relaxed">
-                        Navigate GDPR and the EU AI Act with confidence. We bake safety and regulation into every workflow.
+                <div class="bento-card">
+                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">Agentic L&D</h3>
+                    <p class="text-[#a6a6a6] leading-relaxed">
+                        Go beyond simple prompting. We train your teams to design, 
+                        deploy, and govern specialized AI agents tailored to 
+                        Recruitment, Legal, and Finance.
                     </p>
                 </div>
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Custom Agents</h3>
-                    <p class="text-sm text-[#8a8f98] leading-relaxed">
-                        We build and deploy specialized AI agents that handle your critical business operations with superhuman precision.
+                <div class="bento-card">
+                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">Rapid Velocity</h3>
+                    <p class="text-[#a6a6a6] leading-relaxed">
+                        Speed is the only differentiator left. Our frameworks 
+                        cut operational overhead by 40% in 12 weeks.
+                    </p>
+                </div>
+                <div class="bento-card md:col-span-2">
+                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">Dublin's Local Partner</h3>
+                    <p class="text-[#a6a6a6] leading-relaxed max-w-lg">
+                        We are on the ground in Dublin. From on-site workshops 
+                        in the Docklands to deep integration audits for Irish 
+                        SaaS, we speak your language and know your law.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="roadmap" class="max-w-4xl mx-auto px-6 mt-40 border-t border-white/5 pt-20">
-            <h2 class="text-3xl font-semibold mb-12 text-center">The Roadmap to AI Competence</h2>
-            <div class="space-y-12">
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold">1</div>
+        <section id="roadmap" class="max-w-3xl mx-auto px-6 py-40 text-center">
+            <h2 class="text-5xl mb-12">The Roadmap to 10x.</h2>
+            <div class="space-y-4">
+                <div class="p-8 border border-white/5 rounded-3xl bg-[#050505] text-left flex items-center space-x-6">
+                    <div class="w-12 h-12 rounded-full border border-blue-500/30 flex items-center justify-center text-blue-500 font-mono">01</div>
                     <div>
-                        <h4 class="text-lg font-medium mb-2">Discovery & Audit</h4>
-                        <p class="text-[#8a8f98]">We analyze your existing workflows to identify high-impact AI opportunities and potential compliance risks.</p>
+                        <div class="font-semibold text-lg">Discovery & Legal Audit</div>
+                        <div class="text-sm text-[#a6a6a6]">Mapping your AI risk and opportunity matrix.</div>
                     </div>
                 </div>
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold">2</div>
+                <div class="p-8 border border-white/5 rounded-3xl bg-[#050505] text-left flex items-center space-x-6">
+                    <div class="w-12 h-12 rounded-full border border-blue-500/30 flex items-center justify-center text-blue-500 font-mono">02</div>
                     <div>
-                        <h4 class="text-lg font-medium mb-2">Strategic Enablement</h4>
-                        <p class="text-[#8a8f98]">Hands-on training sessions tailored to your specific industry, from finance to pharmaceuticals.</p>
+                        <div class="font-semibold text-lg">Team Enablement Workshops</div>
+                        <div class="text-sm text-[#a6a6a6]">Turning employees into agentic workflow masters.</div>
                     </div>
                 </div>
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold">3</div>
+                <div class="p-8 border border-white/5 rounded-3xl bg-[#050505] text-left flex items-center space-x-6">
+                    <div class="w-12 h-12 rounded-full border border-blue-500/30 flex items-center justify-center text-blue-500 font-mono">03</div>
                     <div>
-                        <h4 class="text-lg font-medium mb-2">Governance Framework</h4>
-                        <p class="text-[#8a8f98]">Implementation of an AI Council and best practices that scale with your business and keep you compliant.</p>
+                        <div class="font-semibold text-lg">AI Council Governance</div>
+                        <div class="text-sm text-[#a6a6a6]">Deploying the guardrails for long-term scale.</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-white/5 py-12 bg-black/20">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:row justify-between items-center text-xs text-[#62666d]">
-            <div>© 2026 autoprod.io. All rights reserved. Based in Dublin, Ireland.</div>
-            <div class="mt-4 md:mt-0 flex space-x-6">
-                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                <a href="https://linkedin.com" class="hover:text-white transition-colors">LinkedIn</a>
+    <footer class="border-t border-white/5 py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <div class="text-2xl font-bold tracking-tighter">AUTOPROD<span class="text-blue-500">.IO</span></div>
+            <div class="flex space-x-12 text-sm text-[#a6a6a6]">
+                <div class="space-y-4">
+                    <div class="text-white font-medium">Platform</div>
+                    <a href="#" class="block nav-link">Compliance</a>
+                    <a href="#" class="block nav-link">Training</a>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-white font-medium">Company</div>
+                    <a href="#" class="block nav-link">About</a>
+                    <a href="#" class="block nav-link">LinkedIn</a>
+                </div>
             </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-20 text-[10px] text-[#62666d] flex justify-between uppercase tracking-widest">
+            <span>© 2026 autoprod.io</span>
+            <span>Dublin, Ireland</span>
         </div>
     </footer>
 </body>
