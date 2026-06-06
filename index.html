@@ -3,121 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Learning & Development for Irish Enterprises - Mastering Speed, Ensuring Compliance</title>
+    <title>autoprod.io | AI Learning & Development for Irish Enterprises</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --color-bg: #08090a;
+            --color-surface: #191a1b;
+            --color-text-primary: #f7f8f8;
+            --color-text-secondary: #8a8f98;
+            --color-brand: #5e6ad2;
+            --color-accent: #7170ff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-feature-settings: "cv01", "ss03";
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 20px;
-            min-height: 70px;
-            border-bottom: #77b300 3px solid;
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
-        header h1 {
-            text-align: center;
-            margin: 0;
-            padding-bottom: 10px;
+        .gradient-text {
+            background: linear-gradient(to right, #f7f8f8, #8a8f98);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        header p {
-            text-align: center;
-            font-size: 1.1em;
+        .btn-primary {
+            background-color: var(--color-brand);
+            transition: background-color 0.2s;
         }
 
-        .section-alt {
-            background: #e4e4e4;
-            padding: 30px 0;
+        .btn-primary:hover {
+            background-color: var(--color-accent);
         }
 
-        h2, h3 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            list-style: disc inside;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+        .hero-glow {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(94, 106, 210, 0.15) 0%, rgba(8, 9, 10, 0) 70%);
+            z-index: -1;
+            filter: blur(60px);
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>AI Learning & Development for Irish Enterprises</h1>
-            <p>Mastering Speed, Ensuring Compliance</p>
+<body class="selection:bg-indigo-500/30">
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#08090a]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-semibold tracking-tight">autoprod<span class="text-indigo-400">.io</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-[#8a8f98]">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#roadmap" class="hover:text-white transition-colors">Roadmap</a>
+                <a href="#compliance" class="hover:text-white transition-colors">Compliance</a>
+            </div>
+            <a href="mailto:info@dylancleary.com" class="text-sm font-medium btn-primary px-4 py-2 rounded-lg text-white">Contact Sales</a>
         </div>
-    </header>
+    </nav>
 
-    <section id="introduction" class="section-alt">
-        <div class="container">
-            <h2>The Irish Enterprise at the AI Crossroads</h2>
-            <p>The relentless surge of Artificial Intelligence is reshaping global business landscapes at an unprecedented pace. For Irish enterprises, this isn't merely a technological trend; it's a fundamental shift demanding strategic adaptation. The imperative for speed, efficiency, and sustained competitiveness in the digital age is undeniable, yet many businesses find themselves at a critical crossroads. They recognize the profound potential of AI to revolutionize operations, enhance customer experience, and unlock new revenue streams, but often lack the internal expertise, structured learning pathways, or clear implementation strategies to navigate this complex terrain effectively.</p>
-            <p>This whitepaper serves as your essential guide, designed specifically for mid-sized to large Irish organizations who are ready to harness the power of AI but are unsure how to begin, or how to scale their existing, nascent AI initiatives responsibly. It addresses the growing chasm between acknowledging the need for AI and confidently, compliantly, and competently integrating it into your workforce and workflows. We will explore how to transform your teams from AI-curious to AI-competent, ensuring that every step forward is not only innovative but also meticulously aligned with the unique regulatory demands of the Irish and European markets.</p>
-            <p>Your journey to becoming an AI-empowered enterprise starts here, with a dual focus on pragmatic adoption and stringent compliance. This is not just about adopting new tools; it's about cultivating an AI-ready culture that thrives on innovation while steadfastly upholding ethical principles and legal obligations.</p>
+    <main class="pt-32 pb-20 relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-medium text-indigo-400 mb-8">
+                <span>New: AI Strategy for Dublin Enterprises</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter mb-8 leading-[1.1] gradient-text">
+                Navigating the AI Tsunami.
+            </h1>
+            <p class="text-lg md:text-xl text-[#8a8f98] mb-12 max-w-2xl mx-auto leading-relaxed">
+                Empowering Irish enterprises with practical AI Learning & Development. 
+                Accelerate adoption, master speed, and ensure strict compliance with EU AI regulations.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#roadmap" class="btn-primary px-8 py-3 rounded-xl font-medium text-white shadow-lg shadow-indigo-500/20 w-full md:w-auto">Get the Roadmap</a>
+                <a href="#compliance" class="px-8 py-3 rounded-xl font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition-all w-full md:w-auto">View Compliance Guide</a>
+            </div>
         </div>
-    </section>
 
-    <section id="regulatory-imperative">
-        <div class="container">
-            <h2>The Regulatory Imperative: Why Irish Law Dictates Your AI Strategy</h2>
-            <p>In the European Union, and by extension, Ireland, the deployment and management of Artificial Intelligence are uniquely intertwined with a robust legislative framework. Ignoring this landscape is not an option; it is a direct path to legal exposure, reputational damage, and stunted innovation. For Irish businesses venturing into AI, understanding and proactively addressing these regulations is not just a compliance checkbox, but a strategic imperative that builds trust, fosters ethical development, and unlocks sustainable competitive advantage.</p>
+        <section id="services" class="max-w-6xl mx-auto px-6 mt-40">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Literacy</h3>
+                    <p class="text-sm text-[#8a8f98] leading-relaxed">
+                        Move beyond prompts. We train your teams on AI fundamentals, agentic workflows, and real-world utility.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">EU Compliance</h3>
+                    <p class="text-sm text-[#8a8f98] leading-relaxed">
+                        Navigate GDPR and the EU AI Act with confidence. We bake safety and regulation into every workflow.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Custom Agents</h3>
+                    <p class="text-sm text-[#8a8f98] leading-relaxed">
+                        We build and deploy specialized AI agents that handle your critical business operations with superhuman precision.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-            <h3>The Shadow of GDPR: Data Privacy as AI's Bedrock</h3>
-            <p>The General Data Protection Regulation (GDPR) (Regulation (EU) 2016/679) casts a long shadow over all data-driven activities within the EU, and AI is no exception. Its principles of data minimization, purpose limitation, transparency, and accountability are foundational to responsible AI development. For Irish businesses, this means:</p>
-            <ul>
-                <li><strong>Data Sourcing & Training:</strong> Rigorous scrutiny of data used for AI model training to ensure it is lawfully collected, processed, and relevant to the defined purpose, with explicit consent where necessary.</li>
-                <li><strong>Algorithmic Transparency:</strong> The "right to explanation" for automated decision-making. While not an absolute right, Article 22, coupled with other GDPR provisions, requires organizations to provide meaningful information about the logic involved in automated decisions, especially those with legal or significant effects on individuals.</li>
-                <li><strong>Data Subject Rights:</strong> Ensuring individuals can exercise their rights (access, rectification, erasure, restriction of processing, data portability) even when their data is part of an AI system.</li>
-                <li><strong>Data Protection Impact Assessments (DPIAs):</strong> Mandatory for high-risk AI processing, DPIAs help identify and mitigate data protection risks <em>before</em> deployment, a practice that aligns closely with forthcoming AI regulations.</li>
-            </ul>
-            <p>Neglecting GDPR in AI initiatives is a high-stakes gamble, potentially leading to substantial fines, loss of consumer trust, and significant operational disruption. Your AI strategy must be a GDPR strategy.</p>
+        <section id="roadmap" class="max-w-4xl mx-auto px-6 mt-40 border-t border-white/5 pt-20">
+            <h2 class="text-3xl font-semibold mb-12 text-center">The Roadmap to AI Competence</h2>
+            <div class="space-y-12">
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold">1</div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-2">Discovery & Audit</h4>
+                        <p class="text-[#8a8f98]">We analyze your existing workflows to identify high-impact AI opportunities and potential compliance risks.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold">2</div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-2">Strategic Enablement</h4>
+                        <p class="text-[#8a8f98]">Hands-on training sessions tailored to your specific industry, from finance to pharmaceuticals.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold">3</div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-2">Governance Framework</h4>
+                        <p class="text-[#8a8f98]">Implementation of an AI Council and best practices that scale with your business and keep you compliant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            <h3>The Dawn of the EU AI Act: Building for a Regulated Future</h3>
-            <p>Adding another layer of complexity and opportunity, the European Union Artificial Intelligence Act (the "AI Act"), currently nearing finalization, will be the world's first comprehensive legal framework for AI. Its tiered, risk-based approach will profoundly impact how AI systems are designed, developed, and deployed within Ireland.</p>
-            <ul>
-                <li><strong>Risk Categorization:</strong> AI systems will be categorized (unacceptable, high-risk, limited-risk, minimal-risk) with corresponding obligations. High-risk systems (e.g., in critical infrastructure, employment, law enforcement, credit scoring) will face stringent requirements, including conformity assessments, risk management systems, human oversight, and robust data governance.</li>
-                <li><strong>Conformity Assessments & CE Marking:</strong> High-risk AI systems will need to undergo conformity assessments before being placed on the market or put into service, potentially requiring a CE marking to indicate compliance.</li>
-                <li><strong>Human Oversight & Transparency:</strong> Emphasis on ensuring human oversight for high-risk AI, along with clear transparency obligations regarding data, performance, and limitations of AI systems.</li>
-                <li><strong>Market Surveillance & Enforcement:</strong> A new governance structure will be established, with national supervisory authorities (like Ireland's Data Protection Commission, which may expand its remit or new bodies emerge) responsible for enforcement and market surveillance.</li>
-            </ul>
-            <p>For Irish enterprises, this isn't an invitation to delay AI adoption; it's a clear blueprint for <em>how</em> to build AI systems that are not only innovative but also legally resilient. Proactive learning and development in these areas will differentiate your organization, enabling you to confidently deploy AI solutions while others hesitate, entangled in regulatory uncertainty.</p>
-            <p>By integrating comprehensive training on GDPR and the EU AI Act into your AI learning strategy, Irish businesses can transform regulatory hurdles into strategic advantages, building trust with customers and stakeholders, and ensuring a future-proof approach to artificial intelligence.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Your AI Learning & Development Consultancy. All rights reserved.</p>
+    <footer class="border-t border-white/5 py-12 bg-black/20">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:row justify-between items-center text-xs text-[#62666d]">
+            <div>© 2026 autoprod.io. All rights reserved. Based in Dublin, Ireland.</div>
+            <div class="mt-4 md:mt-0 flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="https://linkedin.com" class="hover:text-white transition-colors">LinkedIn</a>
+            </div>
         </div>
     </footer>
 </body>
