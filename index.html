@@ -1,254 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>autoprod.io | AI Mastery for the Irish Enterprise</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --color-bg: #000000;
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #a6a6a6;
-            --color-accent: #0099ff;
-            --color-glass: rgba(255, 255, 255, 0.1);
-            --blue-glow: rgba(0, 153, 255, 0.15);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>autoprod.io — AI Mastery for Irish Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #000000;
+  --surface: #09090b;
+  --elevated: #111114;
+  --card: #16161a;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.10);
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #7c3aed;
+  --accent-glow: rgba(124,58,237,0.20);
+  --accent-bright: #8b5cf6;
+  --accent-soft: #a78bfa;
+  --green: #22c55e;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
-        body {
-            background-color: var(--color-bg);
-            color: var(--color-text-primary);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            font-feature-settings: "cv01", "cv05", "cv09", "cv11", "ss03", "ss07";
-            overflow-x: hidden;
-        }
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        /* Vibe-coded Headings (GT Walsheim-esque) */
-        h1, h2 {
-            letter-spacing: -0.05em;
-            line-height: 0.9;
-            font-weight: 600;
-        }
+body {
+  background: var(--void);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-feature-settings: "cv01","cv05","cv09","cv11","ss03","ss07";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
+}
 
-        .hero-title {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            margin-bottom: 2rem;
-        }
+/* Custom cursor */
+.cursor { position:fixed; width:20px; height:20px; border:2px solid rgba(255,255,255,0.4); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width 0.2s,height 0.2s,border-color 0.2s; mix-blend-mode:difference; }
+.cursor-dot { position:fixed; width:4px; height:4px; background:var(--accent-bright); border-radius:50%; pointer-events:none; z-index:10000; transform:translate(-50%,-50%); }
+.cursor.hover { width:48px; height:48px; border-color:var(--accent-bright); border-width:1.5px; }
 
-        /* Glassmorphism / Modern Kit components */
-        .glass-btn {
-            background: var(--color-glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+/* Particle canvas */
+#particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; opacity:0.4; }
 
-        .glass-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: scale(0.98);
-        }
+/* Nav */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 40px; display:flex; align-items:center; justify-content:space-between; backdrop-filter:blur(20px); background:rgba(0,0,0,0.7); border-bottom:1px solid var(--border-subtle); }
+.nav-logo { font-size:20px; font-weight:700; letter-spacing:-0.6px; color:var(--text-primary); text-decoration:none; display:flex; align-items:center; gap:10px; }
+.nav-logo span { color:var(--accent-bright); }
+.nav-links { display:flex; gap:32px; align-items:center; }
+.nav-links a { color:var(--text-secondary); text-decoration:none; font-size:14px; font-weight:500; letter-spacing:-0.2px; transition:color 0.2s; }
+.nav-links a:hover { color:var(--text-primary); }
+.nav-cta { background:var(--accent); color:#fff; padding:8px 18px; border-radius:var(--radius-pill); font-size:13px; font-weight:600; text-decoration:none; letter-spacing:-0.1px; transition:all 0.3s var(--transition-smooth); }
+.nav-cta:hover { background:var(--accent-bright); box-shadow:0 0 30px var(--accent-glow); }
 
-        .primary-pill {
-            background: #ffffff;
-            color: #000000;
-            border-radius: 9999px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
+/* Sections */
+section { position:relative; z-index:1; padding:120px 40px; max-width:1200px; margin:0 auto; }
+.hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding-top:100px; }
 
-        .primary-pill:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-        }
+/* Hero */
+.hero-eyebrow { font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--accent-soft); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:24px; opacity:0; animation:fadeUp 0.8s 0.2s forwards; }
+.hero-title { font-size:clamp(48px, 8vw, 96px); font-weight:800; line-height:0.92; letter-spacing:-0.04em; margin-bottom:32px; opacity:0; animation:fadeUp 0.8s 0.4s forwards; }
+.hero-title .accent { color:var(--accent-bright); position:relative; }
+.hero-title .accent::after { content:''; position:absolute; bottom:8px; left:0; right:0; height:4px; background:var(--accent); border-radius:2px; opacity:0.3; }
+.hero-sub { font-size:clamp(17px, 2vw, 22px); color:var(--text-secondary); line-height:1.6; max-width:640px; font-weight:400; opacity:0; animation:fadeUp 0.8s 0.6s forwards; }
+.hero-ctas { display:flex; gap:14px; margin-top:40px; opacity:0; animation:fadeUp 0.8s 0.8s forwards; }
 
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
+.btn-primary { background:var(--accent); color:#fff; padding:14px 28px; border-radius:var(--radius-pill); font-size:15px; font-weight:600; text-decoration:none; letter-spacing:-0.2px; transition:all 0.35s var(--transition-spring); display:inline-flex; align-items:center; gap:8px; }
+.btn-primary:hover { background:var(--accent-bright); transform:scale(1.03); box-shadow:0 0 40px var(--accent-glow); }
+.btn-ghost { background:rgba(255,255,255,0.04); color:var(--text-primary); padding:14px 28px; border-radius:var(--radius-pill); border:1px solid var(--border); font-size:15px; font-weight:500; text-decoration:none; letter-spacing:-0.2px; transition:all 0.3s var(--transition-smooth); }
+.btn-ghost:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.15); }
 
-        .bento-card {
-            background: #090909;
-            border: 1px solid var(--blue-glow);
-            border-radius: 20px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
+/* Stats row */
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:80px; padding-top:60px; border-top:1px solid var(--border-subtle); opacity:0; animation:fadeUp 0.8s 1.0s forwards; }
+.stat-number { font-size:48px; font-weight:700; letter-spacing:-1.5px; color:var(--accent-soft); line-height:1; }
+.stat-label { font-size:14px; color:var(--text-muted); margin-top:8px; font-weight:400; }
 
-        .bento-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at top right, rgba(0, 153, 255, 0.05), transparent);
-            pointer-events: none;
-        }
+/* Section headers */
+.section-label { font-family:var(--font-mono); font-size:11px; font-weight:500; color:var(--accent-soft); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:16px; }
+.section-title { font-size:clamp(36px, 5vw, 56px); font-weight:700; letter-spacing:-0.03em; line-height:1.05; margin-bottom:20px; }
+.section-desc { font-size:17px; color:var(--text-secondary); max-width:560px; line-height:1.6; margin-bottom:60px; }
 
-        /* Vibe coded animation slop */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+/* Service cards */
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.service-card { background:var(--card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:36px 28px; transition:all 0.4s var(--transition-smooth); position:relative; overflow:hidden; }
+.service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--accent-glow), transparent); opacity:0; transition:opacity 0.4s; }
+.service-card:hover { border-color:var(--border); transform:translateY(-4px); box-shadow:0 20px 60px rgba(124,58,237,0.08); }
+.service-card:hover::before { opacity:1; }
+.service-icon { font-size:32px; margin-bottom:20px; }
+.service-name { font-size:20px; font-weight:600; letter-spacing:-0.4px; margin-bottom:10px; }
+.service-desc { font-size:14px; color:var(--text-secondary); line-height:1.6; margin-bottom:20px; }
+.service-price { font-size:32px; font-weight:700; letter-spacing:-1px; color:var(--accent-soft); }
+.service-price span { font-size:14px; font-weight:400; color:var(--text-muted); }
+.service-link { display:inline-flex; align-items:center; gap:6px; color:var(--accent-bright); font-size:13px; font-weight:600; text-decoration:none; margin-top:16px; letter-spacing:-0.1px; transition:gap 0.3s; }
+.service-link:hover { gap:12px; }
 
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
+/* Marquee / trust */
+.trust-strip { border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); padding:40px 0; overflow:hidden; position:relative; z-index:1; }
+.trust-track { display:flex; gap:80px; animation:marquee 30s linear infinite; }
+.trust-item { font-family:var(--font-mono); font-size:13px; color:var(--text-muted); white-space:nowrap; letter-spacing:0.1em; opacity:0.5; }
 
-        .accent-glow {
-            position: absolute;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(0, 153, 255, 0.08) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(80px);
-        }
+/* Process */
+.process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; counter-reset:step; }
+.process-step { background:var(--card); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:32px 24px; position:relative; transition:all 0.3s; }
+.process-step:hover { border-color:var(--accent); border-opacity:0.3; }
+.process-step::before { counter-increment:step; content:"0" counter(step); font-family:var(--font-mono); font-size:11px; color:var(--accent-soft); position:absolute; top:20px; right:24px; }
+.process-step h4 { font-size:16px; font-weight:600; margin-bottom:8px; letter-spacing:-0.3px; }
+.process-step p { font-size:13px; color:var(--text-secondary); line-height:1.5; }
 
-        .nav-link {
-            font-size: 14px;
-            color: var(--color-text-secondary);
-            transition: color 0.2s;
-        }
+/* CTA section */
+.cta-section { text-align:center; padding:160px 40px; }
+.cta-glow { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; height:600px; background:radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events:none; z-index:0; }
+.cta-content { position:relative; z-index:1; }
 
-        .nav-link:hover {
-            color: #ffffff;
-        }
+/* Footer */
+footer { border-top:1px solid var(--border-subtle); padding:40px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:1; }
+footer p { font-size:13px; color:var(--text-muted); }
+.footer-links { display:flex; gap:24px; }
+.footer-links a { color:var(--text-muted); text-decoration:none; font-size:13px; transition:color 0.2s; }
+.footer-links a:hover { color:var(--text-primary); }
 
-        .compliance-tag {
-            background: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-    </style>
+/* Reveal animations */
+.reveal { opacity:0; transform:translateY(40px); transition:all 0.8s var(--transition-smooth); }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes marquee {
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+@keyframes pulse-glow {
+  0%,100% { box-shadow:0 0 30px var(--accent-glow); }
+  50% { box-shadow:0 0 60px var(--accent-glow), 0 0 100px rgba(124,58,237,0.1); }
+}
+
+/* Mobile */
+@media (max-width:768px) {
+  nav { padding:16px 20px; }
+  .nav-links { display:none; }
+  section { padding:80px 20px; }
+  .services-grid, .process-grid { grid-template-columns:1fr; }
+  .stats { grid-template-columns:1fr; gap:24px; }
+  .hero-title { font-size:42px; }
+}
+</style>
 </head>
-<body class="selection:bg-blue-500/30">
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-btn rounded-full px-6 py-3 flex items-center space-x-8">
-        <div class="font-bold text-sm tracking-tighter">AUTOPROD<span class="text-blue-500">.IO</span></div>
-        <div class="hidden md:flex space-x-6">
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#roadmap" class="nav-link">Roadmap</a>
-            <a href="#compliance" class="nav-link">Audit</a>
-        </div>
-        <a href="mailto:info@dylancleary.com" class="text-xs bg-white text-black px-4 py-1.5 rounded-full font-medium">Contact</a>
-    </nav>
+<body>
 
-    <main class="relative">
-        <div class="accent-glow top-[-10%] right-[-10%]"></div>
-        <div class="accent-glow bottom-[-10%] left-[-10%]"></div>
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+<canvas id="particles"></canvas>
 
-        <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-12">
-                <span>Direct Implementation for Dublin 2026</span>
-            </div>
-            <h1 class="hero-title">
-                AI Speed.<br/>Legal Safety.
-            </h1>
-            <p class="text-xl text-[#a6a6a6] mb-12 max-w-2xl mx-auto leading-tight">
-                Practical Learning & Development for Irish Enterprises. 
-                We build the agents, train your staff, and secure your 
-                compliance in one high-velocity roadmap.
-            </p>
-            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#roadmap" class="primary-pill px-10 py-4 text-sm">Download the 2026 Strategy</a>
-                <a href="#services" class="glass-btn px-10 py-4 text-sm rounded-full">Explore Services</a>
-            </div>
-        </section>
+<nav>
+  <a href="/" class="nav-logo"><span>◈</span> autoprod</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#services" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
 
-        <section id="services" class="max-w-7xl mx-auto px-6 py-40">
-            <div class="bento-grid">
-                <div class="bento-card md:col-span-2">
-                    <div class="compliance-tag mb-6">GDPR / EU AI ACT</div>
-                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">The Compliance-First Audit</h3>
-                    <p class="text-[#a6a6a6] leading-relaxed max-w-lg">
-                        Navigating the EU AI Act isn't a suggestion—it's survival. 
-                        We audit your existing data flows and architect a safe 
-                        pathway for internal LLM adoption that protects your 
-                        indemnity and your users.
-                    </p>
-                </div>
-                <div class="bento-card">
-                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">Agentic L&D</h3>
-                    <p class="text-[#a6a6a6] leading-relaxed">
-                        Go beyond simple prompting. We train your teams to design, 
-                        deploy, and govern specialized AI agents tailored to 
-                        Recruitment, Legal, and Finance.
-                    </p>
-                </div>
-                <div class="bento-card">
-                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">Rapid Velocity</h3>
-                    <p class="text-[#a6a6a6] leading-relaxed">
-                        Speed is the only differentiator left. Our frameworks 
-                        cut operational overhead by 40% in 12 weeks.
-                    </p>
-                </div>
-                <div class="bento-card md:col-span-2">
-                    <h3 class="text-3xl font-semibold mb-4 tracking-tight">Dublin's Local Partner</h3>
-                    <p class="text-[#a6a6a6] leading-relaxed max-w-lg">
-                        We are on the ground in Dublin. From on-site workshops 
-                        in the Docklands to deep integration audits for Irish 
-                        SaaS, we speak your language and know your law.
-                    </p>
-                </div>
-            </div>
-        </section>
+<section class="hero" id="hero">
+  <div class="hero-eyebrow">AI Consulting · Dublin, Ireland</div>
+  <h1 class="hero-title">Your business<br>deserves an <span class="accent">AI-native</span><br>operating system</h1>
+  <p class="hero-sub">We don't sell AI hype. We embed agentic intelligence into Irish enterprises — turning compliance headaches into competitive moats, and manual workflows into autonomous revenue engines.</p>
+  <div class="hero-ctas">
+    <a href="https://buy.stripe.com/9B67sM3AI8Ij4D91jK7ss0b" class="btn-primary">Book an Audit — €250</a>
+    <a href="#services" class="btn-ghost">See what we do ↓</a>
+  </div>
+  <div class="stats">
+    <div><div class="stat-number">100+</div><div class="stat-label">Irish enterprises scouted &amp; profiled</div></div>
+    <div><div class="stat-number">€0</div><div class="stat-label">Spent on ads — all inbound through intelligence</div></div>
+    <div><div class="stat-number">2026</div><div class="stat-label">EU AI Act enforcement begins. Are you ready?</div></div>
+  </div>
+</section>
 
-        <section id="roadmap" class="max-w-3xl mx-auto px-6 py-40 text-center">
-            <h2 class="text-5xl mb-12">The Roadmap to 10x.</h2>
-            <div class="space-y-4">
-                <div class="p-8 border border-white/5 rounded-3xl bg-[#050505] text-left flex items-center space-x-6">
-                    <div class="w-12 h-12 rounded-full border border-blue-500/30 flex items-center justify-center text-blue-500 font-mono">01</div>
-                    <div>
-                        <div class="font-semibold text-lg">Discovery & Legal Audit</div>
-                        <div class="text-sm text-[#a6a6a6]">Mapping your AI risk and opportunity matrix.</div>
-                    </div>
-                </div>
-                <div class="p-8 border border-white/5 rounded-3xl bg-[#050505] text-left flex items-center space-x-6">
-                    <div class="w-12 h-12 rounded-full border border-blue-500/30 flex items-center justify-center text-blue-500 font-mono">02</div>
-                    <div>
-                        <div class="font-semibold text-lg">Team Enablement Workshops</div>
-                        <div class="text-sm text-[#a6a6a6]">Turning employees into agentic workflow masters.</div>
-                    </div>
-                </div>
-                <div class="p-8 border border-white/5 rounded-3xl bg-[#050505] text-left flex items-center space-x-6">
-                    <div class="w-12 h-12 rounded-full border border-blue-500/30 flex items-center justify-center text-blue-500 font-mono">03</div>
-                    <div>
-                        <div class="font-semibold text-lg">AI Council Governance</div>
-                        <div class="text-sm text-[#a6a6a6]">Deploying the guardrails for long-term scale.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="trust-strip">
+  <div class="trust-track">
+    <span class="trust-item">EU AI ACT COMPLIANCE</span>
+    <span class="trust-item">AGENTIC WORKFLOW DESIGN</span>
+    <span class="trust-item">GDPR-FIRST ARCHITECTURE</span>
+    <span class="trust-item">IRISH ENTERPRISE FOCUS</span>
+    <span class="trust-item">NO-CODE AI INTEGRATION</span>
+    <span class="trust-item">CUSTOM LLM DEPLOYMENT</span>
+    <span class="trust-item">EU AI ACT COMPLIANCE</span>
+    <span class="trust-item">AGENTIC WORKFLOW DESIGN</span>
+    <span class="trust-item">GDPR-FIRST ARCHITECTURE</span>
+    <span class="trust-item">IRISH ENTERPRISE FOCUS</span>
+    <span class="trust-item">NO-CODE AI INTEGRATION</span>
+    <span class="trust-item">CUSTOM LLM DEPLOYMENT</span>
+  </div>
+</div>
 
-    <footer class="border-t border-white/5 py-20 bg-black">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
-            <div class="text-2xl font-bold tracking-tighter">AUTOPROD<span class="text-blue-500">.IO</span></div>
-            <div class="flex space-x-12 text-sm text-[#a6a6a6]">
-                <div class="space-y-4">
-                    <div class="text-white font-medium">Platform</div>
-                    <a href="#" class="block nav-link">Compliance</a>
-                    <a href="#" class="block nav-link">Training</a>
-                </div>
-                <div class="space-y-4">
-                    <div class="text-white font-medium">Company</div>
-                    <a href="#" class="block nav-link">About</a>
-                    <a href="#" class="block nav-link">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 mt-20 text-[10px] text-[#62666d] flex justify-between uppercase tracking-widest">
-            <span>© 2026 autoprod.io</span>
-            <span>Dublin, Ireland</span>
-        </div>
-    </footer>
+<section id="services">
+  <div class="section-label reveal">What We Deliver</div>
+  <h2 class="section-title reveal">AI that actually works.<br>No slideware. No vapor.</h2>
+  <p class="section-desc reveal">Every engagement produces a concrete artifact — a deployed agent, an audited compliance gap, a working prototype. You don't pay for thinking. You pay for outcomes.</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🔍</div>
+      <div class="service-name">AI Readiness Audit</div>
+      <div class="service-desc">90-minute deep-dive into your current AI posture. We map your data flows, compliance gaps, and automation opportunities against the EU AI Act — then hand you a prioritized 90-day roadmap.</div>
+      <div class="service-price">€250<span> / audit</span></div>
+      <a href="https://buy.stripe.com/9B67sM3AI8Ij4D91jK7ss0b" class="service-link">Book now →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚡</div>
+      <div class="service-name">AI Strategy Session</div>
+      <div class="service-desc">Two hours with an AI systems architect. We design your agentic workflow layer, identify the highest-ROI automation targets, and spec out the implementation — all grounded in Irish regulatory reality.</div>
+      <div class="service-price">€500<span> / session</span></div>
+      <a href="https://buy.stripe.com/9B6fZi7QYcYz2v18Mc7ss0a" class="service-link">Book now →</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏗️</div>
+      <div class="service-name">Bespoke AI Build</div>
+      <div class="service-desc">We build custom agentic systems for your enterprise — internal LLM interfaces, document triage engines, compliance monitors, customer-facing AI. Scoped, priced, and delivered. EU AI Act compliant from day zero.</div>
+      <div class="service-price" style="font-size:18px;font-weight:500;">Scoped per engagement</div>
+      <a href="mailto:allistair@autoprod.io" class="service-link">Start a conversation →</a>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-label reveal">How We Work</div>
+  <h2 class="section-title reveal">Intelligence-first.<br>Output-obsessed.</h2>
+  <div class="process-grid" style="margin-top:40px;">
+    <div class="process-step reveal"><h4>Scout</h4><p>We profile your industry, competitors, and internal data landscape. Every engagement starts with real research — not recycled decks.</p></div>
+    <div class="process-step reveal"><h4>Audit</h4><p>We map your AI readiness against the EU AI Act framework, identifying compliance risks and automation opportunities in one pass.</p></div>
+    <div class="process-step reveal"><h4>Build</h4><p>We deliver working software — agents, interfaces, automations — not PowerPoint. Every build comes with documentation and handover training.</p></div>
+    <div class="process-step reveal"><h4>Iterate</h4><p>We monitor, measure, and improve. AI systems degrade without maintenance. We stay on as your AI operations partner.</p></div>
+  </div>
+</section>
+
+<section class="cta-section" style="position:relative;">
+  <div class="cta-glow"></div>
+  <div class="cta-content reveal">
+    <div class="section-label" style="justify-content:center;display:flex;">Ready?</div>
+    <h2 class="section-title" style="margin-bottom:16px;">The EU AI Act is here.<br>The companies that move first win.</h2>
+    <p style="color:var(--text-secondary);font-size:17px;max-width:500px;margin:0 auto 40px;">Your competitors are already asking their agencies about AI. When they call, we want them to hear "we're already working with autoprod."</p>
+    <a href="https://buy.stripe.com/9B67sM3AI8Ij4D91jK7ss0b" class="btn-primary" style="animation:pulse-glow 3s infinite;font-size:16px;padding:16px 36px;">Start with an Audit — €250</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 autoprod.io — AI Mastery for Irish Enterprise</p>
+  <div class="footer-links">
+    <a href="mailto:allistair@autoprod.io">Contact</a>
+    <a href="https://buy.stripe.com/9B67sM3AI8Ij4D91jK7ss0b">Book Audit</a>
+  </div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorDot = document.querySelector('.cursor-dot');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.service-card,.process-step').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+
+// Particle system
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 1.5 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.3;
+    this.speedY = (Math.random() - 0.5) * 0.3;
+    this.opacity = Math.random() * 0.4 + 0.1;
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(139,92,246,${this.opacity})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(139,92,246,${0.06 * (1 - dist / 120)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Scroll reveals
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth reveal stagger for service cards
+document.querySelectorAll('.service-card.reveal, .process-step.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.1) + 's';
+});
+
+// Parallax on hero
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero');
+  const scrolled = window.pageYOffset;
+  if (hero) {
+    const title = hero.querySelector('.hero-title');
+    if (title) title.style.transform = `translateY(${scrolled * 0.15}px)`;
+  }
+});
+</script>
 </body>
 </html>
