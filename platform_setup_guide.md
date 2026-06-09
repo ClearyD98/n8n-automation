@@ -1,4 +1,4 @@
-# autoprod Platform Setup — Copy-Paste Content
+No no # autoprod Platform Setup — Copy-Paste Content
 
 ## FIVERR — Create Seller Account + 3 Gigs
 **URL:** https://www.fiverr.com/join/seller
