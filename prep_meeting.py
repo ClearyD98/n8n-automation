@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+"""autoprod meeting prep — generates client briefs and talking points"""
+import os, json, csv, sys
+from datetime import datetime
+import sqlite3
+
+DB = os.path.expanduser("~/Projects/autoprod-relaunch/pipeline.db")
+BRIEFS_DIR = os.path.expanduser("~/Projects/autoprod-relaunch/briefs")
+
+def load_lead(company_name):
+    """Load lead data from CSV"""
+    csv_path = os.path.expanduser("~/Projects/autoprod-relaunch/leads_v1.csv")
+    with open(csv_path) as f:
+        for row in csv.DictReader(f):
+            if row['company'].lower() == company_name.lower():
+                return row
+    return None
+
+def generate_brief(client_name, meeting_type="audit", meeting_date=None):
+    """Generate a meeting brief and talking points"""
+    lead = load_lead(client_name)
+    if not lead:
+        print(f"Company '{client_name}' not found in leads.")
+        print("Creating blank brief — fill in the details.")
+        lead = {'company': client_name, 'industry': 'Unknown', 'contact_role': 'TBD'}
+
+    os.makedirs(BRIEFS_DIR, exist_ok=True)
+    
+    industry = lead.get('industry', 'Unknown')
+    role = lead.get('contact_role', 'TBD')
+    angle = lead.get('bespoke_angle', '')
+    
+    today = datetime.now().strftime("%B %d, %Y")
+    mt = meeting_date or today
+    mt_label = {"audit": "AI Readiness Audit", "strategy": "AI Strategy Session", "retainer": "Monthly Advisory Review"}
+    
+    brief = f"""# {client_name} — Meeting Brief
+**{mt_label.get(meeting_type, meeting_type)} | {mt}**
+
+---
+
+## Company Profile
+
+- **Company:** {client_name}
+- **Industry:** {industry}
+- **Contact:** {role}
+- **Bespoke angle:** {angle}
+
+---
+
+## Pre-Meeting Research
+
+### What to know before you walk in:
+1. Review {client_name}'s website — products, services, recent news
+2. Check their LinkedIn page — recent hires, announcements, AI-related posts
+3. Search for "{client_name} AI" on Google News — any AI initiatives or press
+4. Check if they're hiring AI/ML/Data roles (signals AI investment)
+
+### Industry context ({industry}):
+- What are competitors doing with AI?
+- Any EU AI Act implications specific to this industry?
+- Recent regulatory changes affecting this sector?
+
+---
+
+## Meeting Agenda
+
+### 1. Introductions (5 min)
+- Thank them for their time
+- Quick background: "I design AI governance and adoption programs — did this inside a global enterprise, now working with Irish companies"
+- Let them introduce themselves and their role
+
+### 2. Discovery (15 min)
+- "What made you book this {meeting_type}?"
+- "What's your current relationship with AI — using it? experimenting? avoiding it?"
+- "What's the biggest operational challenge you'd love technology to solve?"
+- "Any compliance or regulatory concerns on your radar?"
+
+### 3. Education (10 min)
+- Quick overview of where they sit on the AI maturity curve
+- EU AI Act relevance — what applies to them specifically
+- Examples from similar companies/industries
+
+### 4. Recommendations (15 min)
+- Top 2-3 automation/strategy opportunities based on discovery
+- Compliance priorities — what needs attention now vs later
+- Concrete next step they can take this week
+
+### 5. Next Steps (5 min)
+- Recap key takeaways
+- Agree on follow-up: report, deck, or next session
+- Timeline for deliverables
+
+---
+
+## Talking Points
+
+### Opening
+> "Thanks for making the time. I've done some research on {client_name} — I can see you're [industry observation]. What I want to get out of today is a clear picture of where AI could actually help you — not the hype, the real stuff."
+
+### If they ask about your background
+> "I spent years inside a global enterprise designing AI governance frameworks, building AI agents, and training teams across four continents. Now I do the same thing directly with Irish companies — same rigor, without the enterprise price tag or procurement process."
+
+### If they ask about pricing
+> "The audit is €750 — that's a fixed price, not an hourly rate. The strategy session is €1,500. Both come with a written deliverable within 48 hours. If you want ongoing support, I do a monthly retainer at €2,000 — that's your fractional AI officer, basically."
+
+### If they push back on cost
+> "I understand. What I'd say is: the EU AI Act fines start at €750,000 or 1% of global turnover. A €750 audit that tells you exactly what you need to do is cheaper than a single hour with a compliance lawyer. And if you decide not to move forward, you've still got a concrete document showing your board you did due diligence."
+
+### Closing
+> "I'll send you the written report within 48 hours. If anything in there resonates, we can book a follow-up. No pressure, no 'limited time offer' nonsense — just good advice you can actually use."
+
+---
+
+## Deliverables Checklist
+- [ ] Send post-meeting summary email within 24 hours
+- [ ] Generate AI Readiness Report or Strategy Deck within 48 hours
+- [ ] Log meeting notes in pipeline.db
+- [ ] Schedule follow-up if agreed
+- [ ] Send invoice/receipt if not prepaid
+
+---
+
+*Generated by autoprod pipeline · {today}*
+"""
+    
+    filename = f"{client_name.lower().replace(' ','_')}_{meeting_type}_{datetime.now().strftime('%Y%m%d')}.md"
+    path = os.path.join(BRIEFS_DIR, filename)
+    with open(path, 'w') as f:
+        f.write(brief)
+    
+    print(f"✓ Brief saved: {path}")
+    return path
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 prep_meeting.py <company_name> [audit|strategy|retainer] [meeting_date]")
+        print("Example: python3 prep_meeting.py 'FRS Recruitment' audit '2026-06-15'")
+        sys.exit(1)
+    
+    client = sys.argv[1]
+    mt = sys.argv[2] if len(sys.argv) > 2 else "audit"
+    date = sys.argv[3] if len(sys.argv) > 3 else None
+    generate_brief(client, mt, date)
