@@ -5,38 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>autoprod — AI That Works For Irish Business</title>
 <style>
-:root{--bg:#000;--surface:#0a0a0a;--card:#111;--border:rgba(255,255,255,0.08);--text:#f5f5f5;--muted:#a0a0a0;--accent:#7c3aed}
+:root{--bg:#000;--surface:#0a0a0a;--card:#111;--border:rgba(255,255,255,0.08);--text:#f5f5f5;--muted:#a0a0a0;--accent:#7c3aed;--green:#22c55e}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .logo{font-weight:700;font-size:18px;text-decoration:none;color:var(--text)}.logo span{color:var(--accent)}
 section{padding:100px 32px;max-width:1000px;margin:0 auto}
-.hero{padding-top:180px;text-align:center}
-.hero h1{font-size:clamp(40px,7vw,64px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
+.hero{padding-top:160px;text-align:center}
+.hero h1{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
 .hero h1 span{color:var(--accent)}
-.hero p{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto 32px}
-.hero .location{font-size:14px;color:var(--muted);margin-top:8px}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:32px}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:32px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:border-color 0.3s}
+.hero p{font-size:17px;color:var(--muted);max-width:550px;margin:0 auto 24px}
+.hero .location{font-size:13px;color:var(--muted);margin-top:6px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:border-color 0.3s}
 .card:hover{border-color:var(--accent)}
-.card h3{font-size:18px;font-weight:600;margin-bottom:6px}
-.card .price{font-size:28px;font-weight:700;color:var(--accent);margin:12px 0 6px}
-.card .price span{font-size:13px;font-weight:400;color:var(--muted)}
+.card h3{font-size:17px;font-weight:600;margin-bottom:4px}
+.card .price{font-size:26px;font-weight:700;color:var(--accent);margin:10px 0 4px}
+.card .price span{font-size:12px;font-weight:400;color:var(--muted)}
 .card .desc{color:var(--muted);font-size:13px;line-height:1.6;flex-grow:1;margin-bottom:16px}
-.card .btn{display:block;background:var(--accent);color:#fff;padding:12px 20px;border-radius:100px;text-decoration:none;font-weight:600;font-size:13px;text-align:center}
-.card .tag{display:inline-block;font-size:10px;font-weight:600;padding:3px 10px;border-radius:100px;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px}
+.card .btn{display:block;background:var(--accent);color:#fff;padding:11px 18px;border-radius:100px;text-decoration:none;font-weight:600;font-size:13px;text-align:center}
+.card .tag{display:inline-block;font-size:10px;font-weight:600;padding:3px 8px;border-radius:100px;margin-bottom:8px;letter-spacing:0.5px}
 .tag-audit{background:rgba(124,58,237,0.15);color:var(--accent)}
-.tag-build{background:rgba(34,197,94,0.15);color:#22c55e}
 .tag-retainer{background:rgba(250,204,21,0.15);color:#facc15}
-.section-title{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-1px;margin-bottom:8px}
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
-.step{text-align:center;padding:24px 16px;border:1px solid var(--border);border-radius:12px}
-.step .num{font-size:24px;font-weight:800;color:var(--accent);margin-bottom:8px}
-.step h4{font-size:14px;font-weight:600;margin-bottom:4px}
-.step p{font-size:12px;color:var(--muted)}
-footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
-@media(max-width:768px){.grid2,.grid3{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}section{padding:60px 20px}}
+.tag-self{background:rgba(34,197,94,0.15);color:#22c55e}
+.section-title{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:6px}
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.step{text-align:center;padding:20px 14px;border:1px solid var(--border);border-radius:12px}
+.step .num{font-size:22px;font-weight:800;color:var(--accent);margin-bottom:6px}
+.step h4{font-size:13px;font-weight:600;margin-bottom:3px}
+.step p{font-size:11px;color:var(--muted)}
+.note{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:10px;padding:20px 24px;margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
+footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border)}
+@media(max-width:768px){.grid3{grid-template-columns:1fr}.how{grid-template-columns:1fr 1fr}section{padding:60px 20px}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -45,35 +45,35 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;bor
 <nav><a href="/" class="logo"><span>◈</span> autoprod</a></nav>
 
 <section class="hero">
-  <h1>AI that <span>actually works</span> for Irish business</h1>
-  <p>Enterprise-grade AI consulting. Built by someone who's done it at scale. Based in the Dublin Docklands.</p>
-  <p class="location">Client meetings at The Carriageworks, Sheriff Street, Dublin 1</p>
+  <h1>Enterprise AI consulting.<br><span>Evenings and weekends.</span></h1>
+  <p>Built around a 9-to-6. Delivered when it works for you. The Carriageworks, Dublin Docklands.</p>
+  <p class="location">Async correspondence during the week · Sessions evenings &amp; weekends · Sheriff Street, Dublin 1</p>
 </section>
 
 <section id="services">
   <div class="section-title">Services</div>
-  
-  <div class="grid3" style="margin-top:16px">
+
+  <div class="grid3">
     <div class="card">
-      <span class="tag tag-audit">Assess</span>
+      <span class="tag tag-self">Self-Serve</span>
+      <h3>EU AI Act Compliance Guide</h3>
+      <div class="price">€197</div>
+      <div class="desc">Complete framework. Risk matrix, timeline, templates. Read it on your lunch break. Implement on your schedule. Instant download.</div>
+      <a href="https://buy.stripe.com/eVq6oI6MU5w72v14vW7ss0m" class="btn">Download</a>
+    </div>
+    <div class="card">
+      <span class="tag tag-audit">Evening/Weekend</span>
       <h3>AI Readiness Audit</h3>
       <div class="price">€750</div>
-      <div class="desc">Half-day engagement. AI posture assessment, EU AI Act compliance gap analysis, 90-day roadmap. Stakeholder debrief included. Board-ready output.</div>
+      <div class="desc">Two-hour session + async prep. AI posture assessment, compliance gap analysis, 90-day roadmap. Board-ready output within 48 hours. No time off work needed.</div>
       <a href="https://buy.stripe.com/8x24gA0ow2jV1qXe6w7ss0n" class="btn">Book an Audit</a>
     </div>
     <div class="card">
-      <span class="tag tag-audit">Compliance</span>
-      <h3>EU AI Act Emergency Review</h3>
+      <span class="tag tag-audit">Weekend</span>
+      <h3>AI Strategy Session</h3>
       <div class="price">€1,500</div>
-      <div class="desc">48-hour urgent assessment for regulatory deadlines, investor diligence, or board demands. Gap analysis, risk classification, immediate action plan.</div>
-      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Get Review</a>
-    </div>
-    <div class="card">
-      <span class="tag tag-audit">Strategy</span>
-      <h3>AI Strategy Workshop</h3>
-      <div class="price">€2,500</div>
-      <div class="desc">Full-day workshop for your leadership team. Agentic workflow design. Automation roadmap. Compliance architecture. Board-ready plan.</div>
-      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Book Workshop</a>
+      <div class="desc">Weekend deep-dive. Agentic workflow design, automation roadmap, compliance architecture. Async follow-up included. Board-ready plan — zero holiday days burned.</div>
+      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Book a Session</a>
     </div>
   </div>
 
@@ -82,42 +82,23 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;bor
       <span class="tag tag-retainer">Monthly</span>
       <h3>AI Advisory Retainer</h3>
       <div class="price">€2,000<span>/month</span></div>
-      <div class="desc">Your fractional AI officer. Monthly strategy sessions, compliance monitoring, vendor assessment, team enablement. Enterprise-grade AI leadership without the full-time salary.</div>
-      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Start Retainer</a>
-    </div>
-    <div class="card">
-      <span class="tag tag-build">Training</span>
-      <h3>Team AI Enablement</h3>
-      <div class="price">€3,500</div>
-      <div class="desc">Four-week structured programme. Weekly sessions + hands-on labs. Your team goes from AI-curious to AI-competent. Certification and resource pack included.</div>
-      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Enrol Your Team</a>
-    </div>
-    <div class="card">
-      <span class="tag tag-build">Build</span>
-      <h3>AI Implementation Sprint</h3>
-      <div class="price">€5,000</div>
-      <div class="desc">Two-week build. We spec, build, and deploy a working AI agent or automation for your business. Documentation, training, and 30-day support included.</div>
-      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Start a Sprint</a>
+      <div class="desc">Your fractional AI officer. Async during the week — emails, doc reviews, strategy. Scheduled calls evenings/weekends. Enterprise AI leadership that fits around your day job.</div>
+      <a href="https://buy.stripe.com/28E5kE5IQbUv9Xt9Qg7ss0u" class="btn">Start Retainer</a>
     </div>
   </div>
 
-  <div class="card" style="margin-top:16px;flex-direction:row;align-items:center;gap:20px">
-    <div style="flex-grow:1">
-      <h3>EU AI Act Compliance Guide</h3>
-      <div class="desc" style="margin-bottom:0">Complete compliance framework. Risk classification. Timeline. Templates. Instant download.</div>
-    </div>
-    <div class="price" style="white-space:nowrap">€197</div>
-    <a href="https://buy.stripe.com/eVq6oI6MU5w72v14vW7ss0m" class="btn" style="white-space:nowrap">Download</a>
+  <div class="note">
+    <strong>How it works around 9-to-6:</strong> All correspondence is async during business hours. Sessions are evenings after 6pm or weekends. In-person at The Carriageworks, Sheriff Street, Dublin 1 — or virtual. You never need to take time off.
   </div>
 </section>
 
 <section id="process">
   <div class="section-title">How it works</div>
-  <div class="process">
-    <div class="step"><div class="num">1</div><h4>You book</h4><p>Online checkout. Instant confirmation.</p></div>
-    <div class="step"><div class="num">2</div><h4>We meet</h4><p>The Carriageworks, Docklands. Or virtual.</p></div>
-    <div class="step"><div class="num">3</div><h4>We deliver</h4><p>Concrete output. No slideware.</p></div>
-    <div class="step"><div class="num">4</div><h4>You execute</h4><p>With or without us. We're here.</p></div>
+  <div class="how">
+    <div class="step"><div class="num">1</div><h4>You book</h4><p>Online checkout. Instant.</p></div>
+    <div class="step"><div class="num">2</div><h4>We prep</h4><p>Async research. Zero calendar.</p></div>
+    <div class="step"><div class="num">3</div><h4>We meet</h4><p>Evening or weekend. Docklands.</p></div>
+    <div class="step"><div class="num">4</div><h4>We deliver</h4><p>Concrete output. No slideware.</p></div>
   </div>
 </section>
 
