@@ -1,76 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorkflowHub | Professional n8n Automation Services</title>
-    <meta name="description" content="Professional n8n automation workflows. Save 20+ hours every week. Premium service.">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Outfit', sans-serif; background: #0a0a0f; color: white; overflow-x: hidden; }
-        .hero-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 60%); }
-        .orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: float 20s ease-in-out infinite; }
-        .orb-1 { width: 400px; height: 400px; background: rgba(139, 92, 246, 0.3); top: 10%; left: -10%; }
-        .orb-2 { width: 300px; height: 300px; background: rgba(236, 72, 153, 0.25); top: 60%; right: -5%; animation-delay: -7s; }
-        @keyframes float { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(30px, -30px); } 50% { transform: translate(-20px, 20px); } 75% { transform: translate(20px, 30px); } }
-        .grid-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); }
-        .text-gradient { background: linear-gradient(135deg, #8b5cf6, #ec4899, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% 200%; animation: gradientMove 5s ease infinite; }
-        @keyframes gradientMove { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        .btn-glow { background: linear-gradient(135deg, #8b5cf6, #ec4899); border: none; padding: 16px 40px; border-radius: 50px; font-weight: 600; font-size: 16px; color: white; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
-        .btn-glow:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4); }
-        .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.3); padding: 14px 38px; border-radius: 50px; font-weight: 600; font-size: 16px; color: white; transition: all 0.3s; text-decoration: none; display: inline-block; }
-        .btn-outline:hover { border-color: #8b5cf6; background: rgba(139, 92, 246, 0.1); }
-        .glass-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 40px; backdrop-filter: blur(20px); transition: all 0.4s; }
-        .glass-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(139, 92, 246, 0.3); transform: translateY(-10px); }
-        .pricing-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 32px; padding: 48px; position: relative; transition: all 0.4s; }
-        .pricing-card:hover { transform: translateY(-15px) scale(1.02); }
-        .pricing-card.featured { background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.1)); border-color: rgba(139, 92, 246, 0.4); }
-        .pricing-card.featured::before { content: 'Most Popular'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #8b5cf6, #ec4899); padding: 8px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; }
-        .icon-box { width: 70px; height: 70px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.1)); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 24px; }
-        .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; background: linear-gradient(135deg, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 0; background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .fade-in { opacity: 0; transform: translateY(30px); animation: fadeIn 0.8s ease-out forwards; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-        .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; } .delay-4 { animation-delay: 0.4s; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>autoprod — AI Consulting for Irish Business | EU AI Act Compliance</title>
+<meta name="description" content="Enterprise-grade AI consulting for Irish companies. AI adoption strategy, EU AI Act compliance, readiness audits, and advisory retainers. Based in Dublin Docklands.">
+<meta name="keywords" content="AI consulting Ireland, AI adoption strategy, EU AI Act compliance, Irish business AI, Dublin AI consultant">
+<meta name="author" content="autoprod">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="autoprod — AI Consulting for Irish Business">
+<meta property="og:description" content="Enterprise-grade AI consulting. Adoption strategy, EU AI Act compliance, readiness audits. Dublin Docklands.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://autoprod.io">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="autoprod — AI Consulting for Irish Business">
+<meta name="twitter:description" content="Enterprise-grade AI consulting for Irish companies. Adoption strategy, compliance, advisory.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c3aed'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='20' font-family='sans-serif'>◈</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2D0L1I5JZ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V2D0L1I5JZ')</script>
 </head>
 <body>
-    <div class="hero-bg"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="grid-bg"></div>
-    
-    <nav><div class="max-w-7xl mx-auto px-6 flex justify-between items-center"><div class="text-2xl font-bold text-gradient">⚡ WorkflowHub</div><div class="hidden md:flex gap-8"><a href="#features" class="text-white/70 hover:text-white transition">Features</a><a href="#pricing" class="text-white/70 hover:text-white transition">Pricing</a><a href="#contact" class="text-white/70 hover:text-white transition">Contact</a></div></div></nav>
-    
-    <section class="min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-            <div class="fade-in"><div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span><span class="text-sm text-white/70">Premium n8n Automation</span></div></div>
-            <h1 class="fade-in delay-1 text-6xl md:text-8xl font-bold mb-6 leading-tight">Automate Your Business<br><span class="text-gradient">Save 20+ Hours/Week</span></h1>
-            <p class="fade-in delay-2 text-xl text-white/60 max-w-2xl mx-auto mb-12">Professional n8n workflows built by experts. No coding required. Just tell us what you want automated.</p>
-            <div class="fade-in delay-3 flex flex-wrap justify-center gap-4"><a href="#pricing" class="btn-glow">See Pricing →</a><a href="#features" class="btn-outline">How It Works</a></div>
+
+<div class="glow" style="width:600px;height:600px;top:-200px;left:50%;transform:translateX(-50%);opacity:0.5"></div>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><span>◈</span> autoprod</a>
+  <div class="nav-links">
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/services" class="btn btn-primary" style="padding:8px 18px;font-size:12px">Get started</a>
+  </div>
+</nav>
+
+<div class="page">
+  <section class="hero container">
+    <h1 class="fade-in">AI adoption,<br><em>done properly.</em></h1>
+    <p class="hero-sub fade-in" style="animation-delay:0.2s">Irish companies need to adopt AI — and they need to do it without getting fined. We handle both sides: strategy and compliance. Built by someone who's done this inside a global enterprise.</p>
+    <p class="hero-meta fade-in" style="animation-delay:0.3s">Dublin Docklands · Flexible scheduling · In-person or Zoom</p>
+    <div style="margin-top:32px" class="fade-in" style="animation-delay:0.4s">
+      <a href="/services" class="btn btn-primary">See what we do</a>
+      <a href="/about" class="btn btn-ghost" style="margin-left:12px">Who you're working with</a>
+    </div>
+  </section>
+
+  <section class="section container reveal">
+    <div class="section-label">The opportunity</div>
+    <h2>AI adoption and regulation are happening at the same time.</h2>
+    <p class="lead">Irish companies want to use AI — to move faster, cut costs, win deals. But the EU AI Act means they can't just experiment. They need someone who understands both: what to build, and how to build it without creating regulatory risk. That's what we do.</p>
+  </section>
+
+  <section class="section container reveal">
+    <div class="section-label">How we work</div>
+    <div class="process">
+      <div class="step reveal"><div class="step-num">1</div><h4>You book</h4><p>Online checkout. Instant confirmation.</p></div>
+      <div class="step reveal reveal-delay-1"><div class="step-num">2</div><h4>We prep</h4><p>You brief us. We research.</p></div>
+      <div class="step reveal reveal-delay-2"><div class="step-num">3</div><h4>We meet</h4><p>Docklands or Zoom.</p></div>
+      <div class="step reveal reveal-delay-3"><div class="step-num">4</div><h4>We deliver</h4><p>Concrete output. Not slideware.</p></div>
+    </div>
+  </section>
+
+  <section class="section container reveal">
+    <div class="section-label">What you get</div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="card-badge badge-purple">Most popular</span>
+        <h3>AI Readiness Audit</h3>
+        <p>Two-hour session: where you stand on AI, what's worth automating, what's a compliance risk. You give us the lay of the land; we bring the expertise. 90-day roadmap included.</p>
+        <div class="card-footer">
+          <div class="card-price">€750</div>
+          <a href="/services" class="card-link">Learn more →</a>
         </div>
-    </section>
-    
-    <section class="py-20"><div class="max-w-6xl mx-auto px-6"><div class="grid grid-cols-2 md:grid-cols-4 gap-8"><div class="text-center fade-in"><div class="stat-number">500+</div><div class="text-white/50 mt-2">Hours Saved</div></div><div class="text-center fade-in delay-1"><div class="stat-number">50+</div><div class="text-white/50 mt-2">Workflows Built</div></div><div class="text-center fade-in delay-2"><div class="stat-number">24/7</div><div class="text-white/50 mt-2">Automation Running</div></div><div class="text-center fade-in delay-3"><div class="stat-number">100%</div><div class="text-white/50 mt-2">Satisfaction</div></div></div></div></section>
-    
-    <section id="features" class="py-20"><div class="max-w-6xl mx-auto px-6"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-bold mb-4">Why WorkflowHub?</h2><p class="text-white/60 text-lg">Premium automation from experts</p></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="glass-card fade-in"><div class="icon-box">⏱️</div><h3 class="text-xl font-semibold mb-3">Save 20+ Hours/Week</h3><p class="text-white/60">Eliminate repetitive tasks. Focus on what matters.</p></div>
-        <div class="glass-card fade-in delay-1"><div class="icon-box">🔌</div><h3 class="text-xl font-semibold mb-3">300+ Integrations</h3><p class="text-white/60">Gmail, Slack, Notion, Google Sheets, CRMs & more.</p></div>
-        <div class="glass-card fade-in delay-2"><div class="icon-box">🛡️</div><h3 class="text-xl font-semibold mb-3">Zero Errors</h3><p class="text-white/60">Your data is accurate 100% of the time.</p></div>
-        <div class="glass-card fade-in delay-3"><div class="icon-box">⚡</div><h3 class="text-xl font-semibold mb-3">Works While You Sleep</h3><p class="text-white/60">24/7 automation. Never miss a follow-up.</p></div>
-        <div class="glass-card fade-in delay-4"><div class="icon-box">💎</div><h3 class="text-xl font-semibold mb-3">Premium Quality</h3><p class="text-white/60">Built by experts with years of experience.</p></div>
-        <div class="glass-card"><div class="icon-box">🎯</div><h3 class="text-xl font-semibold mb-3">Tailored to You</h3><p class="text-white/60">Every workflow is custom-built for your needs.</p></div>
-    </div></div></section>
-    
-    <section id="pricing" class="py-20"><div class="max-w-6xl mx-auto px-6"><div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-bold mb-4">Simple Pricing</h2><p class="text-white/60 text-lg">Research-backed rates (€100-150/hour equivalent)</p></div>
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="pricing-card fade-in"><h3 class="text-2xl font-bold mb-2">🚀 Starter</h3><div class="text-5xl font-bold mb-4">€199<span class="text-lg text-white/50">/project</span></div><p class="text-white/60 mb-4">Perfect for simple automations</p><ul class="space-y-3 mb-8 text-white/70"><li class="flex items-center gap-2">✓ 1 automation workflow</li><li class="flex items-center gap-2">✓ Email integration</li><li class="flex items-center gap-2">✓ 24-hour delivery</li><li class="flex items-center gap-2">✓ 7-day support</li></ul><a href="mailto:hello@workflowhub.ie" class="btn-outline w-full text-center">Get Started</a></div>
-        <div class="pricing-card featured fade-in delay-1"><h3 class="text-2xl font-bold mb-2">⚡ Business</h3><div class="text-5xl font-bold mb-4">€499<span class="text-lg text-white/50">/project</span></div><p class="text-white/60 mb-4">Most popular choice</p><ul class="space-y-3 mb-8 text-white/70"><li class="flex items-center gap-2">✓ 3 automation workflows</li><li class="flex items-center gap-2">✓ Premium integrations</li><li class="flex items-center gap-2">✓ API connections</li><li class="flex items-center gap-2">✓ 3-day delivery</li><li class="flex items-center gap-2">✓ 30-day support</li></ul><a href="mailto:hello@workflowhub.ie" class="btn-glow w-full text-center">Get Started</a></div>
-        <div class="pricing-card fade-in delay-2"><h3 class="text-2xl font-bold mb-2">🏢 Enterprise</h3><div class="text-5xl font-bold mb-4">€999+<span class="text-lg text-white/50">/project</span></div><p class="text-white/60 mb-4">Full system automation</p><ul class="space-y-3 mb-8 text-white/70"><li class="flex items-center gap-2">✓ Unlimited workflows</li><li class="flex items-center gap-2">✓ Custom development</li><li class="flex items-center gap-2">✓ Priority support</li><li class="flex items-center gap-2">✓ Ongoing maintenance</li><li class="flex items-center gap-2">✓ Training included</li></ul><a href="mailto:hello@workflowhub.ie" class="btn-outline w-full text-center">Contact Us</a></div>
-    </div></div></section>
-    
-    <section id="contact" class="py-20"><div class="max-w-4xl mx-auto px-6"><div class="glass-card text-center p-16"><h2 class="text-4xl font-bold mb-4">Ready to Save Time?</h2><p class="text-white/60 text-lg mb-8">Get a free consultation. No obligation.</p><a href="mailto:hello@workflowhub.ie" class="btn-glow">Get Free Quote →</a></div></div></section>
-    
-    <footer class="py-10 border-t border-white/5"><div class="max-w-6xl mx-auto px-6 text-center text-white/40"><p>📧 hello@workflowhub.ie</p><p class="mt-2">© 2026 WorkflowHub</p></div></footer>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <span class="card-badge badge-purple">Deep dive</span>
+        <h3>AI Strategy Session</h3>
+        <p>We design your automation roadmap. What to build, what to buy, what to avoid. Compliance architecture against the EU AI Act. Board-ready plan with real numbers.</p>
+        <div class="card-footer">
+          <div class="card-price">€1,500</div>
+          <a href="/services" class="card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <span class="card-badge badge-amber">Ongoing</span>
+        <h3>AI Advisory Retainer</h3>
+        <p>Fractional AI officer. Strategy, vendor assessment, compliance monitoring, team enablement. Async during the week, calls when needed. Cancel anytime.</p>
+        <div class="card-footer">
+          <div class="card-price">€2,000<span>/mo</span></div>
+          <a href="/services" class="card-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="mailto:dylan@autoprod.io">dylan@autoprod.io</a>
+    </p>
+    <p style="margin-top:8px">autoprod · Dublin Docklands</p>
+  </footer>
+</div>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.2 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
