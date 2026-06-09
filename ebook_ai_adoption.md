@@ -131,7 +131,7 @@ Most Irish SMEs spend €0-2,500 total on AI in their first year. That's enough 
 
 ### About the Author
 
-Dylan Cleary spent four years designing and deploying AI governance frameworks inside a global enterprise. He now helps Irish companies adopt AI properly through his consulting practice, autoprod.
+Dylan Cleary spent four years in enterprise support operations at a global company — designing AI governance frameworks, building AI agents, co-founding an AI Council, and developing processes for critical services. He now helps Irish companies adopt AI properly through his consulting practice, autoprod.
 
 dylan@autoprod.io
 autoprod.io

@@ -11,7 +11,7 @@ The European Union Artificial Intelligence Act is here. Enforcement is ramping u
 
 This guide is written for Irish small and medium enterprises. Not for multinationals with legal teams. Not for tech companies with compliance departments. For you — the business owner who knows AI matters but doesn't have time to read 400 pages of legislation.
 
-I spent four years designing AI governance frameworks inside a global enterprise. I co-founded an AI Council that set adoption standards for hundreds of people. I built AI agents that automated quality review at scale. Now I help Irish companies do the same — at a fraction of the cost.
+I spent years in enterprise operations — designing AI governance, building AI agents, and managing critical processes at a global company. I co-founded an AI Council that set adoption standards for hundreds of people. I built AI agents that automated quality review at scale. Now I help Irish companies do the same — at a fraction of the cost.
 
 This book is everything you need to understand the EU AI Act, assess your compliance gaps, and build a practical action plan.
 
@@ -149,7 +149,7 @@ You don't need to be an AI expert to comply with AI regulation. You just need to
 
 ### About the Author
 
-Dylan Cleary spent four years designing and deploying AI governance frameworks inside a global enterprise. He co-founded an AI Council for a 200+ person organization, built AI agents at enterprise scale, and trained teams across four continents. Now he helps Irish companies navigate the EU AI Act through his consulting practice, autoprod.
+Dylan Cleary spent four years in enterprise support operations at a global company — designing AI governance frameworks, building AI agents, co-founding an AI Council, and developing processes for critical services. He co-founded an AI Council for a 200+ person organization, built AI agents at enterprise scale, and trained teams across four continents. Now he helps Irish companies navigate the EU AI Act through his consulting practice, autoprod.
 
 dylan@autoprod.io
 autoprod.io
