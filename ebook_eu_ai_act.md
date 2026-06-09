@@ -1,7 +1,7 @@
 # EU AI Act Compliance for Irish SMEs
 ## A Practical Guide to Getting Compliant Without Breaking the Bank
 
-**By Dylan Cleary**
+**By Al Cleary**
 
 ---
 
@@ -141,15 +141,8 @@ Beyond fines: reputational damage, loss of business partners, exclusion from pub
 
 The EU AI Act isn't optional. It isn't going away. And it isn't something you can outsource entirely — your business is ultimately responsible for the AI systems you use.
 
-But compliance doesn't need to cost €100,000 in consulting fees. This guide gives you the framework. autoprod.io gives you the support.
 
 You don't need to be an AI expert to comply with AI regulation. You just need to start.
 
 ---
 
-### About the Author
-
-Dylan Cleary spent four years in enterprise support operations at a global company — designing AI governance frameworks, building AI agents, co-founding an AI Council, and developing processes for critical services. He co-founded an AI Council for a 200+ person organization, built AI agents at enterprise scale, and trained teams across four continents. Now he helps Irish companies navigate the EU AI Act through his consulting practice, autoprod.
-
-dylan@autoprod.io
-autoprod.io

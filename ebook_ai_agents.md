@@ -1,7 +1,7 @@
 # Building AI Agents: A Practical Guide
 ## How to Create, Deploy, and Manage AI Agents in Your Business
 
-**By Dylan Cleary**
+**By Al Cleary**
 
 ---
 
@@ -145,9 +145,3 @@ Most business agents fall into the "Limited Risk" category — they need transpa
 
 ---
 
-### About the Author
-
-Dylan Cleary has designed, deployed, and managed AI agents at enterprise scale — building systems that automated quality review, analyzed performance metrics, and processed thousands of cases daily. He now helps Irish businesses build their first agents through his consulting practice, autoprod.
-
-dylan@autoprod.io
-autoprod.io

@@ -1,7 +1,7 @@
 # The 5-Hour Side Hustle
 ## How to Build a Second Income Stream While Working Full-Time
 
-**By D.C. Cleary**
+**By Al Cleary**
 
 ---
 
@@ -94,6 +94,3 @@ When your side hustle can run for a week without you touching it, you've built a
 
 ---
 
-### About the Author
-
-D.C. Cleary built multiple side income streams while working full-time in enterprise operations. Based in Dublin, Ireland.

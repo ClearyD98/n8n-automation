@@ -1,7 +1,7 @@
 # The 30-Day Money Reset
 ## A No-Bullshit Guide to Taking Control of Your Finances
 
-**By D.C. Cleary**
+**By Al Cleary**
 
 ---
 
@@ -291,6 +291,3 @@ Write down every debt you have. Every balance. Every interest rate. Face the num
 
 ---
 
-### About the Author
-
-D.C. Cleary writes about money, systems, and getting unstuck.
