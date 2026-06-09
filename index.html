@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>autoprod — AI That Works For Irish Business</title>
 <style>
-:root{--bg:#000;--surface:#0a0a0a;--card:#111;--border:rgba(255,255,255,0.08);--text:#f5f5f5;--muted:#a0a0a0;--accent:#7c3aed;--green:#22c55e}
+:root{--bg:#000;--surface:#0a0a0a;--card:#111;--border:rgba(255,255,255,0.08);--text:#f5f5f5;--muted:#a0a0a0;--accent:#7c3aed}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
@@ -15,7 +15,7 @@ section{padding:100px 32px;max-width:1000px;margin:0 auto}
 .hero h1{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
 .hero h1 span{color:var(--accent)}
 .hero p{font-size:17px;color:var(--muted);max-width:550px;margin:0 auto 24px}
-.hero .location{font-size:13px;color:var(--muted);margin-top:6px}
+.hero .meta{font-size:13px;color:var(--muted);margin-top:6px}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:24px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:border-color 0.3s}
 .card:hover{border-color:var(--accent)}
@@ -45,9 +45,9 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;bor
 <nav><a href="/" class="logo"><span>◈</span> autoprod</a></nav>
 
 <section class="hero">
-  <h1>Enterprise AI consulting.<br><span>Evenings and weekends.</span></h1>
-  <p>Built around a 9-to-6. Delivered when it works for you. The Carriageworks, Dublin Docklands.</p>
-  <p class="location">Async correspondence during the week · Sessions evenings &amp; weekends · Sheriff Street, Dublin 1</p>
+  <h1>Enterprise AI consulting.<br><span>Flexible scheduling.</span></h1>
+  <p>In-person at The Carriageworks, Dublin Docklands — or Zoom. We find a time that works for both of us.</p>
+  <p class="meta">Dublin 1 · Virtual sessions available · Book online in 30 seconds</p>
 </section>
 
 <section id="services">
@@ -62,17 +62,17 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;bor
       <a href="https://buy.stripe.com/eVq6oI6MU5w72v14vW7ss0m" class="btn">Download</a>
     </div>
     <div class="card">
-      <span class="tag tag-audit">Evening/Weekend</span>
+      <span class="tag tag-audit">In-Person or Zoom</span>
       <h3>AI Readiness Audit</h3>
       <div class="price">€750</div>
-      <div class="desc">Two-hour session + async prep. AI posture assessment, compliance gap analysis, 90-day roadmap. Board-ready output within 48 hours. No time off work needed.</div>
+      <div class="desc">Two-hour session. We assess your AI posture, map compliance gaps, and deliver a 90-day roadmap. Board-ready output within 48 hours.</div>
       <a href="https://buy.stripe.com/8x24gA0ow2jV1qXe6w7ss0n" class="btn">Book an Audit</a>
     </div>
     <div class="card">
-      <span class="tag tag-audit">Weekend</span>
+      <span class="tag tag-audit">In-Person or Zoom</span>
       <h3>AI Strategy Session</h3>
       <div class="price">€1,500</div>
-      <div class="desc">Weekend deep-dive. Agentic workflow design, automation roadmap, compliance architecture. Async follow-up included. Board-ready plan — zero holiday days burned.</div>
+      <div class="desc">Deep-dive session. Agentic workflow design, automation roadmap, compliance architecture. Async follow-up included. Board-ready plan.</div>
       <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Book a Session</a>
     </div>
   </div>
@@ -82,13 +82,13 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;bor
       <span class="tag tag-retainer">Monthly</span>
       <h3>AI Advisory Retainer</h3>
       <div class="price">€2,000<span>/month</span></div>
-      <div class="desc">Your fractional AI officer. Async during the week — emails, doc reviews, strategy. Scheduled calls evenings/weekends. Enterprise AI leadership that fits around your day job.</div>
+      <div class="desc">Your fractional AI officer. Async correspondence and scheduled calls. Strategy, compliance monitoring, vendor assessment. Enterprise AI leadership on retainer.</div>
       <a href="https://buy.stripe.com/28E5kE5IQbUv9Xt9Qg7ss0u" class="btn">Start Retainer</a>
     </div>
   </div>
 
   <div class="note">
-    <strong>How it works around 9-to-6:</strong> All correspondence is async during business hours. Sessions are evenings after 6pm or weekends. In-person at The Carriageworks, Sheriff Street, Dublin 1 — or virtual. You never need to take time off.
+    <strong>Scheduling:</strong> Sessions are available during business hours where possible — particularly Mondays — as well as evenings and weekends. In-person at The Carriageworks, Sheriff Street, Dublin 1, or over Zoom. We'll find a time that works.
   </div>
 </section>
 
@@ -96,8 +96,8 @@ footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;bor
   <div class="section-title">How it works</div>
   <div class="how">
     <div class="step"><div class="num">1</div><h4>You book</h4><p>Online checkout. Instant.</p></div>
-    <div class="step"><div class="num">2</div><h4>We prep</h4><p>Async research. Zero calendar.</p></div>
-    <div class="step"><div class="num">3</div><h4>We meet</h4><p>Evening or weekend. Docklands.</p></div>
+    <div class="step"><div class="num">2</div><h4>We prep</h4><p>Async research. No calendar Tetris.</p></div>
+    <div class="step"><div class="num">3</div><h4>We meet</h4><p>Docklands or Zoom. Your choice.</p></div>
     <div class="step"><div class="num">4</div><h4>We deliver</h4><p>Concrete output. No slideware.</p></div>
   </div>
 </section>
