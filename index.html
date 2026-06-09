@@ -3,108 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>autoprod — AI That Works For Irish Business</title>
-<style>
-:root{--bg:#000;--surface:#0a0a0a;--card:#111;--border:rgba(255,255,255,0.08);--text:#f5f5f5;--muted:#a0a0a0;--accent:#7c3aed}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-weight:700;font-size:18px;text-decoration:none;color:var(--text)}.logo span{color:var(--accent)}
-section{padding:100px 32px;max-width:1000px;margin:0 auto}
-.hero{padding-top:160px;text-align:center}
-.hero h1{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
-.hero h1 span{color:var(--accent)}
-.hero p{font-size:17px;color:var(--muted);max-width:550px;margin:0 auto 24px}
-.hero .meta{font-size:13px;color:var(--muted);margin-top:6px}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:24px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:border-color 0.3s}
-.card:hover{border-color:var(--accent)}
-.card h3{font-size:17px;font-weight:600;margin-bottom:4px}
-.card .price{font-size:26px;font-weight:700;color:var(--accent);margin:10px 0 4px}
-.card .price span{font-size:12px;font-weight:400;color:var(--muted)}
-.card .desc{color:var(--muted);font-size:13px;line-height:1.6;flex-grow:1;margin-bottom:16px}
-.card .btn{display:block;background:var(--accent);color:#fff;padding:11px 18px;border-radius:100px;text-decoration:none;font-weight:600;font-size:13px;text-align:center}
-.card .tag{display:inline-block;font-size:10px;font-weight:600;padding:3px 8px;border-radius:100px;margin-bottom:8px;letter-spacing:0.5px}
-.tag-audit{background:rgba(124,58,237,0.15);color:var(--accent)}
-.tag-retainer{background:rgba(250,204,21,0.15);color:#facc15}
-.tag-self{background:rgba(34,197,94,0.15);color:#22c55e}
-.section-title{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:6px}
-.how{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
-.step{text-align:center;padding:20px 14px;border:1px solid var(--border);border-radius:12px}
-.step .num{font-size:22px;font-weight:800;color:var(--accent);margin-bottom:6px}
-.step h4{font-size:13px;font-weight:600;margin-bottom:3px}
-.step p{font-size:11px;color:var(--muted)}
-.note{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:10px;padding:20px 24px;margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
-footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:12px;border-top:1px solid var(--border)}
-@media(max-width:768px){.grid3{grid-template-columns:1fr}.how{grid-template-columns:1fr 1fr}section{padding:60px 20px}}
-</style>
+<title>autoprod — AI for Irish business</title>
+<link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav><a href="/" class="logo"><span>◈</span> autoprod</a></nav>
+<div class="glow" style="width:600px;height:600px;top:-200px;left:50%;transform:translateX(-50%);opacity:0.5"></div>
 
-<section class="hero">
-  <h1>Enterprise AI consulting.<br><span>Flexible scheduling.</span></h1>
-  <p>In-person at Dublin Docklands — or Zoom. We find a time that works for both of us.</p>
-  <p class="meta">Dublin 1 · Virtual sessions available · Book online in 30 seconds</p>
-</section>
-
-<section id="services">
-  <div class="section-title">Services</div>
-
-  <div class="grid3">
-    <div class="card">
-      <span class="tag tag-self">Self-Serve</span>
-      <h3>EU AI Act Compliance Guide</h3>
-      <div class="price">€197</div>
-      <div class="desc">Complete framework. Risk matrix, timeline, templates. Read it on your lunch break. Implement on your schedule. Instant download.</div>
-      <a href="https://buy.stripe.com/eVq6oI6MU5w72v14vW7ss0m" class="btn">Download</a>
-    </div>
-    <div class="card">
-      <span class="tag tag-audit">In-Person or Zoom</span>
-      <h3>AI Readiness Audit</h3>
-      <div class="price">€750</div>
-      <div class="desc">Two-hour session. We assess your AI posture, map compliance gaps, and deliver a 90-day roadmap. Board-ready output within 48 hours.</div>
-      <a href="https://buy.stripe.com/8x24gA0ow2jV1qXe6w7ss0n" class="btn">Book an Audit</a>
-    </div>
-    <div class="card">
-      <span class="tag tag-audit">In-Person or Zoom</span>
-      <h3>AI Strategy Session</h3>
-      <div class="price">€1,500</div>
-      <div class="desc">Deep-dive session. Agentic workflow design, automation roadmap, compliance architecture. Async follow-up included. Board-ready plan.</div>
-      <a href="https://buy.stripe.com/cNi9AU5IQ7Ef1qXfaA7ss0t" class="btn">Book a Session</a>
-    </div>
+<nav class="nav">
+  <a href="/" class="nav-logo"><span>◈</span> autoprod</a>
+  <div class="nav-links">
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/services" class="btn btn-primary" style="padding:8px 18px;font-size:12px">Get started</a>
   </div>
+</nav>
 
-  <div class="grid3" style="margin-top:16px">
-    <div class="card">
-      <span class="tag tag-retainer">Monthly</span>
-      <h3>AI Advisory Retainer</h3>
-      <div class="price">€2,000<span>/month</span></div>
-      <div class="desc">Your fractional AI officer. Async correspondence and scheduled calls. Strategy, compliance monitoring, vendor assessment. Enterprise AI leadership on retainer.</div>
-      <a href="https://buy.stripe.com/28E5kE5IQbUv9Xt9Qg7ss0u" class="btn">Start Retainer</a>
+<div class="page">
+  <section class="hero container">
+    <h1 class="fade-in">Your company<br>needs an <em>AI person</em></h1>
+    <p class="hero-sub fade-in" style="animation-delay:0.2s">You know AI matters. You don't have time to figure it out. That's where we come in — someone who's done this inside a global enterprise, now working directly with Irish companies.</p>
+    <p class="hero-meta fade-in" style="animation-delay:0.3s">Dublin Docklands · Flexible scheduling · In-person or Zoom</p>
+    <div style="margin-top:32px" class="fade-in" style="animation-delay:0.4s">
+      <a href="/services" class="btn btn-primary">See what we do</a>
+      <a href="/about" class="btn btn-ghost" style="margin-left:12px">Who you're working with</a>
     </div>
-  </div>
+  </section>
 
-  <div class="note">
-    <strong>Scheduling:</strong> Sessions are available during business hours where possible — particularly Mondays — as well as evenings and weekends. In-person at Dublin Docklands, or over Zoom. We'll find a time that works.
-  </div>
-</section>
+  <section class="section container reveal">
+    <div class="section-label">Why this exists</div>
+    <h2>The EU AI Act is here. Most Irish companies aren't ready.</h2>
+    <p class="lead">The regulation is live. Enforcement is ramping up. Your competitors are scrambling to figure out what "compliance" means. Meanwhile, the companies that move first are using AI to cut costs, speed up operations, and win deals. We make sure you're in the second group.</p>
+  </section>
 
-<section id="process">
-  <div class="section-title">How it works</div>
-  <div class="how">
-    <div class="step"><div class="num">1</div><h4>You book</h4><p>Online checkout. Instant.</p></div>
-    <div class="step"><div class="num">2</div><h4>We prep</h4><p>Async research. No calendar Tetris.</p></div>
-    <div class="step"><div class="num">3</div><h4>We meet</h4><p>Docklands or Zoom. Your choice.</p></div>
-    <div class="step"><div class="num">4</div><h4>We deliver</h4><p>Concrete output. No slideware.</p></div>
-  </div>
-</section>
+  <section class="section container reveal">
+    <div class="section-label">How we work</div>
+    <div class="process">
+      <div class="step reveal"><div class="step-num">1</div><h4>You book</h4><p>Online checkout. Instant confirmation.</p></div>
+      <div class="step reveal reveal-delay-1"><div class="step-num">2</div><h4>We prep</h4><p>Async research. No calendar chaos.</p></div>
+      <div class="step reveal reveal-delay-2"><div class="step-num">3</div><h4>We meet</h4><p>Docklands or Zoom.</p></div>
+      <div class="step reveal reveal-delay-3"><div class="step-num">4</div><h4>We deliver</h4><p>Concrete output. Not slideware.</p></div>
+    </div>
+  </section>
 
-<footer>
-  <p>autoprod · Dublin Docklands · allistair@autoprod.io</p>
-</footer>
+  <section class="section container reveal">
+    <div class="section-label">What you get</div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="card-badge badge-purple">Most popular</span>
+        <h3>AI Readiness Audit</h3>
+        <p>A two-hour session where we assess where you stand — AI posture, compliance gaps, automation opportunities. You walk out with a 90-day roadmap.</p>
+        <div class="card-footer">
+          <div class="card-price">€750</div>
+          <a href="/services" class="card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <span class="card-badge badge-purple">Deep dive</span>
+        <h3>AI Strategy Session</h3>
+        <p>We design your agentic workflow layer, map automation targets, and build a compliance architecture. Board-ready output with async follow-up.</p>
+        <div class="card-footer">
+          <div class="card-price">€1,500</div>
+          <a href="/services" class="card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <span class="card-badge badge-amber">Ongoing</span>
+        <h3>AI Advisory Retainer</h3>
+        <p>Your fractional AI officer. Strategy, compliance monitoring, vendor assessment — async during the week, calls when needed. Enterprise AI leadership on retainer.</p>
+        <div class="card-footer">
+          <div class="card-price">€2,000<span>/mo</span></div>
+          <a href="/services" class="card-link">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <footer class="footer">
+    <p>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="mailto:dylan@autoprod.io">dylan@autoprod.io</a>
+    </p>
+    <p style="margin-top:8px">autoprod · Dublin Docklands</p>
+  </footer>
+</div>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.2 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
