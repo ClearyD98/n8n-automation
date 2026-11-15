@@ -1,6 +1,6 @@
 # EU AI Act Compliance for Irish Business: A Practical Guide
 
-**By Dylan Cleary, autoprod.io**
+**By autoprod.io**
 
 ---
 
@@ -196,11 +196,10 @@ You can handle the initial audit and basic documentation internally if you have 
 
 ## About the Author
 
-Dylan Cleary is an AI Systems Architect based in Dublin, Ireland. He spent 4+ years at Stripe in enterprise support and escalations, where he co-founded the PSO AI Council and built AI governance frameworks for a 200+ person organization. He now helps Irish businesses navigate the EU AI Act through autoprod.io.
+The author is an AI Systems Architect based in Dublin, Ireland. He spent 4+ years at Stripe in enterprise support and escalations, where he co-founded the PSO AI Council and built AI governance frameworks for a 200+ person organization. He now helps Irish businesses navigate the EU AI Act through autoprod.io.
 
-**Contact:** dylan@autoprod.io
+**Contact:** hello@autoprod.io
 **Website:** https://autoprod.io
-**LinkedIn:** https://www.linkedin.com/in/dylan-cleary-a510b7105/
 
 ---
 

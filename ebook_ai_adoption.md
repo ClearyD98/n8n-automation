@@ -1,7 +1,7 @@
 # AI Adoption Strategy for Business Leaders
 ## A Practical Guide to Getting Started With Artificial Intelligence
 
-**By Al Cleary**
+**By autoprod**
 
 ---
 

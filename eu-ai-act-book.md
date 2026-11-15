@@ -1,7 +1,7 @@
 # EU AI Act Compliance for Irish Business
 ## The Complete Practical Guide — 2026 Edition
 
-**By Dylan Cleary, autoprod.io**
+**By autoprod.io**
 
 ---
 
@@ -746,9 +746,9 @@ The math is simple. Compliance costs roughly 1-5% of the potential fine. And fin
 
 ## About the Author
 
-Dylan Cleary is an AI Systems Architect based in Dublin, Ireland. He spent over four years at Stripe in enterprise support and escalations, where he co-founded the PSO AI Council and led AI governance, training, and enablement for a 200+ person global support organization.
+The author is an AI Systems Architect based in Dublin, Ireland. He spent over four years at Stripe in enterprise support and escalations, where he co-founded the PSO AI Council and led AI governance, training, and enablement for a 200+ person global support organization.
 
-At Stripe, Dylan:
+At Stripe, the author:
 - Designed and delivered AI training programmes across four international sites
 - Co-founded the PSO AI Council with a formal three-pillar governance structure (Enablement, Execution, Governance)
 - Built production AI agents for quality review and performance analytics
@@ -761,9 +761,8 @@ He now helps Irish businesses navigate the EU AI Act through autoprod.io — a f
 - **AI Readiness Audit (€250):** Complete AI system inventory, risk classification, gap analysis, board-ready report. 2 weeks.
 - **AI Governance Framework (€5,000):** Full policy suite, 90-day implementation roadmap, staff training, DPC-aligned documentation. 4 weeks.
 
-**Contact:** dylan@autoprod.io
+**Contact:** hello@autoprod.io
 **Website:** https://autoprod.io
-**LinkedIn:** https://www.linkedin.com/in/dylan-cleary-a510b7105/
 
 ---
 

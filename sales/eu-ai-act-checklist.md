@@ -1,5 +1,5 @@
 # EU AI Act Compliance Checklist for Irish SMEs
-## Prepared by Dylan Cleary, autoprod.io
+## Prepared by autoprod.io
 
 ---
 
