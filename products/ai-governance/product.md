@@ -270,7 +270,7 @@ This creates a regulatory push-pull: companies need AI to compete (government wa
 4. Implement the policy templates
 5. Schedule quarterly compliance reviews
 
-**Questions?** Contact dylan@autoprod.io
+**Questions?** Contact hello@autoprod.io
 
 **Need hands-on help?** Book a consulting engagement at autoprod.io/ai-governance
 
