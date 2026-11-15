@@ -1,7 +1,7 @@
 # EU AI Act Compliance for Irish SMEs
 ## A Practical Guide to Getting Compliant Without Breaking the Bank
 
-**By Al Cleary**
+**By autoprod**
 
 ---
 

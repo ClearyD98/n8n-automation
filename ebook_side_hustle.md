@@ -1,7 +1,7 @@
 # The 5-Hour Side Hustle
 ## How to Build a Second Income Stream While Working Full-Time
 
-**By Al Cleary**
+**By autoprod**
 
 ---
 

@@ -1,7 +1,7 @@
 # The 30-Day Money Reset
 ## A No-Bullshit Guide to Taking Control of Your Finances
 
-**By Al Cleary**
+**By autoprod**
 
 ---
 

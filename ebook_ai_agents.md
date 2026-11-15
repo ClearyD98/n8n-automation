@@ -1,7 +1,7 @@
 # Building AI Agents: A Practical Guide
 ## How to Create, Deploy, and Manage AI Agents in Your Business
 
-**By Al Cleary**
+**By autoprod**
 
 ---
 
